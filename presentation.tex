@@ -1,21 +1,108 @@
 \documentclass{beamer} % use the beamer package for presentations
 \usetheme{metropolis} %use the metropolis theme
+\usepackage{wrapfig}
+
+\graphicspath{ {./assets/images/} } % sets the location of the graphics directory
 
 % title slide setup
-\title{Methods in \\ Research Software Engineering}
+\title{Methods in \\Research Software Engineering}
 \date{6th May 2021}
 \author{Dr David Wilby}
 \institute{Research Software Engineering Team,\\ The University of Sheffield}
-\titlegraphic{\vspace*{4cm}\hspace*{7cm}\includegraphics[width=.3\textwidth,height=.3\textwidth]{assets/images/RSE_logo_blackborder.png}}
+\titlegraphic{\vspace*{4cm}\hspace*{7cm}\includegraphics[width=.3\textwidth]{RSE_logo_blackborder}}
 
 % the main document
 \begin{document}
-  \maketitle %build the title slide
-  % \section{First Section}
 
-% Section 1
-  \begin{frame}{Why research software engineering?}
-    Hello, world!
+  \begin{frame}
+    \titlepage
+  \end{frame}
+
+  \begin{frame}{Outline}
+    \begin{itemize}
+      \item Introduction
+      \item Academic Research
+      \item Research Software Engineering
+      \item Version Control
+      \item GitHub (collaboration \& project management)
+      \item Best Practice
+      \begin{itemize}
+        \item Documentation
+        \item Commenting
+        \item Code Style
+        \item Testing
+        \item Licenses
+        \item Repository Organisation
+      \end{itemize}
+      \item Resources
+      \item Nuggets of Wisdom
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}{Introduction}
+
+    \begin{wrapfigure}{r}{0.3\textwidth}
+        \includegraphics[width=0.3\textwidth]{wilby}
+    \end{wrapfigure}
+
+    David Wilby
+
+    \href{https://davidwilby.github.io/}{davidwilby.github.io/}
+
+    \textbf{Who?}
+    
+    Research Software Engineer
+
+    \textbf{Background}
+
+    Optical Physics, Sensory Biology, Numerical Simulations, HPC
+
+    \textbf{Interests}
+
+    Python, Git, Matlab, Open Source, Web Apps, Research Impact
+
+
+  \end{frame}
+
+  \begin{frame}{Research Software Engineering}
+    \textbf{What is research software engineering?}
+  \end{frame}
+
+
+
+  % Version control
+
+  \begin{frame}{Version Control}
+    How to use Git:
+    \begin{itemize}
+      \item \href{https://git-scm.com/}{Command Line Git \includegraphics[height=.05\textheight]{git}}
+      \item \href{https://code.visualstudio.com/}{VS Code \includegraphics[height=.05\textheight]{vscode}}
+      \item \href{https://www.gitkraken.com/}{GitKraken \includegraphics[height=.05\textheight]{gitkraken}}
+      \item \href{https://gitforwindows.org/}{Git Bash \includegraphics[height=.07\textheight]{gitbash}}
+      \item + many more...
+    \end{itemize}
+
+  \end{frame}
+
+  \begin{frame}{GitHub - collaboration}
+  \end{frame}
+
+  \begin{frame}{GitHub - project management}
+  \end{frame}
+
+  \begin{frame}{Best practice - documentation}
+  \end{frame}
+
+  \begin{frame}{Best practice - testing}
+  \end{frame}
+
+  \begin{frame}{Best practice - reproducibility}
+  \end{frame}
+
+  \begin{frame}{Best practice - code style}
+  \end{frame}
+
+  \begin{frame}{Best practice - environment management}
   \end{frame}
 
 \end{document}
