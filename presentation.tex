@@ -5,13 +5,6 @@
 
 % used for formatting code blocks
 \usepackage[most]{tcolorbox}
-% \tcbuselibrary{skins}
-% \newtcblisting{sh-input}{colback=black,colupper=white,colframe=black,
-% listing only,listing options={style=tcblatex,language=sh},hbox,
-% every listing line={\textcolor{cyan}{\small\ttfamily\bfseries\$}}}
-% \newtcblisting{sh-output}{colback=black,colupper=white,colframe=black,
-% listing only,listing options={style=tcblatex,language=sh},hbox,
-% every listing line={\textcolor{white}{\tiny>}}}
 
 % sets the location of the graphics directory
 \graphicspath{ {./assets/images/} }
@@ -136,7 +129,10 @@
 
     Learning resources:
     \begin{itemize}
+      \item \href{http://swcarpentry.github.io/git-novice/}{\underline{software carpentry lesson material}}
       \item \textit{"oh sh** git"} - \href{https://wizardzines.com/zines/oh-shit-git/}{\underline{zine}}, or \href{https://ohshitgit.com/}{\underline{blog}}
+      \item \href{https://stackoverflow.com/}{\underline{stack overflow}} \textit{etc.} - \textit{use carefully}
+      \item blogs on \href{https://dev.to/}{\underline{dev}} or \href{https://www.atlassian.com/git/tutorials}{\underline{atlassian}} \textit{etc.}
     \end{itemize}
 
   \end{frame}
@@ -144,8 +140,8 @@
   \begin{frame}[fragile]{Git - useful commands}
     \begin{tcblisting}{beamer,colback=black,colupper=white,colframe=black,
       listing only,listing options={style=tcblatex,language=sh},hbox,
-      every listing line={\textcolor{cyan}{\small\ttfamily\bfseries\$}}}
-      git status
+      every listing line*={\textcolor{cyan}{\small\ttfamily\bfseries\$}}}
+  git status
     \end{tcblisting}
     Show current branch, staged/tracked/untracked files, current status.
     \includegraphics[height=.6\textheight]{git_status_output.png}
@@ -155,35 +151,51 @@
     'stash' your current unstaged changes.\newline
     \begin{tcblisting}{beamer,colback=black,colupper=white,colframe=black,
       listing only,listing options={style=tcblatex,language=sh},hbox,
-      every listing line={\textcolor{cyan}{\small\ttfamily\bfseries\$}}}
-      git stash
+      every listing line*={\textcolor{cyan}{\small\ttfamily\bfseries\$}}}
+  git stash
     \end{tcblisting}
     
     \begin{tcblisting}{beamer,colback=black,colupper=white,colframe=black,
       listing only,listing options={style=tcblatex,language=sh},hbox}
-      Saved working directory and index state WIP on main: 3a158fc add some notes
+> Saved working directory and index state WIP on main: 3a158fc add some notes
     \end{tcblisting}
 
     Another couple to try:
     \begin{tcblisting}{beamer,colback=black,colupper=white,colframe=black,
       listing only,listing options={style=tcblatex,language=sh},hbox,
-      every listing line={\textcolor{cyan}{\small\ttfamily\bfseries\$}}}
-      git stash list
+      every listing line*={\textcolor{cyan}{\small\ttfamily\bfseries\$}}}
+  git stash list
     \end{tcblisting}
 
     \begin{tcblisting}{beamer,colback=black,colupper=white,colframe=black,
       listing only,listing options={style=tcblatex,language=sh},hbox,
-      every listing line={\textcolor{cyan}{\small\ttfamily\bfseries\$}}}
-      git stash pop
+      every listing line*={\textcolor{cyan}{\small\ttfamily\bfseries\$}}}
+  git stash pop
     \end{tcblisting}
     
   \end{frame}
 
   \begin{frame}[fragile]
+    
     \begin{tcblisting}{beamer,colback=black,colupper=white,colframe=black,
       listing only,listing options={style=tcblatex,language=sh},hbox,
-      every listing line={\textcolor{cyan}{\small\ttfamily\bfseries\$}}}
-    git log --decorate --all --oneline --graph
+      every listing line*={\textcolor{cyan}{\small\ttfamily\bfseries\$}}}
+  git remote -v
+    \end{tcblisting}
+    
+    \begin{tcblisting}{beamer,colback=black,colupper=white,colframe=black,
+      listing only,listing options={style=tcblatex,language=sh},hbox}
+> origin git@github.com:davidwilby/ResearchSoftwareMethods (fetch)
+> origin git@github.com:davidwilby/ResearchSoftwareMethods (push)
+    \end{tcblisting}
+
+  \end{frame}
+
+  \begin{frame}[fragile]
+    \begin{tcblisting}{beamer,colback=black,colupper=white,colframe=black,
+      listing only,listing options={style=tcblatex,language=sh},hbox,
+      every listing line*={\textcolor{cyan}{\small\ttfamily\bfseries\$}}}
+  git log --decorate --all --oneline --graph
     \end{tcblisting}
     \includegraphics[height=.9\textheight]{git_log_tree_output.png}
   \end{frame}

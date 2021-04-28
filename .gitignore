@@ -18,3 +18,7 @@
 *.pdf
 *.nav
 *.snm
+presentation.fdb_latexmk
+presentation.listing
+presentation.synctex.gz
+presentation.vrb
