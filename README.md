@@ -28,7 +28,7 @@ The `Beamer` documentclass is used for formatting a presentation in LaTeX, most 
 Instructions for building the slide theme are here: https://github.com/matze/mtheme
 
 ### Build Instructions
-#### Clone this repo
+#### Locally
 In the folder location where you would like to build the presentation pdf, run:
 ```sh
 git clone https://github.com/davidwilby/ResearchSoftwareMethods
@@ -36,3 +36,7 @@ cd ResearchSoftwareMethodsTalk
 pdflatex presentation.tex
 ```
 This should build the presentation to `./presentation.pdf`
+
+#### Automated on GitHub
+Tagged commits are automatically built and associated with a release; the built pdf is attached to the release as an asset.
+You can see the workflow for doing this in [`.github/workflows/`](/.github/workflows)
