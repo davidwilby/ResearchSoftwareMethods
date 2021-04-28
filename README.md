@@ -1,5 +1,7 @@
 # Slides for Research Software Engineering Methods Talk
 
+![pdf](https://github.com/davidwilby/ResearchSoftwareMethods/actions/workflows/build_presentation_pdf.yml/badge.svg)
+
 ## Building the slides
 ### Depencencies
 #### LaTeX
