@@ -30,8 +30,8 @@ jobs:
           # The root LaTeX file to be compiled
           root_file: presentation.tex
           
-      - name: Upload as artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: PDF
-          path: presentation.pdf
+      - name: Upload PDF to releases
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
