@@ -29,6 +29,12 @@ jobs:
         with:
           # The root LaTeX file to be compiled
           root_file: presentation.tex
+
+      - name: Create actions artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: PDF
+          path: presentation.pdf
           
       - name: Upload PDF to releases
         uses: softprops/action-gh-release@v1
