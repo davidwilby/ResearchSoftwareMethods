@@ -343,14 +343,18 @@
   }
 
   \begin{frame}{Best practice - environment management}
-    \begin{itemize}
-      \item Virtual environments: Conda, Venv, Renv (previously packrat)
-      \item Containers: Docker, Singularity
-      \item Virtual Machines: vagrant etc.
-    \end{itemize}
+    \begin{tcolorbox}[skin=beamer,adjusted title=Virtual environments]
+      e.g. Conda, Venv, Renv (previously packrat)
+    \end{tcolorbox}
+    \begin{tcolorbox}[skin=beamer,adjusted title=Containers]
+      e.g. Docker, Singularity
+    \end{tcolorbox}
+    \begin{tcolorbox}[skin=beamer,adjusted title=Virtual Machines]
+      e.g. Vagrant
+    \end{tcolorbox}    
   \end{frame}
   
-  \begin{frame}{HPC Resources at Sheffield}
+  \begin{frame}{High-Performance Computing}
     \begin{columns}
       \begin{column}{0.5\textwidth}
         Why use HPC?
@@ -373,7 +377,15 @@
       
       \begin{column}{0.5\textwidth}
         \includegraphics[width=\textwidth]{iceberg2014.jpg}
-        \tiny{Image: \href{https://www.sheffield.ac.uk/it-services/research/hpc/sharc}{TUoS Research IT}}
+        \tiny
+        Image: \href{https://www.sheffield.ac.uk/it-services/research/hpc/sharc}{TUoS Research IT}
+        \small
+        \\\vspace{1cm}
+        HPC @ TUoS presentations:
+        \begin{itemize}
+          \item \href{https://rse.shef.ac.uk/uos-hpc-resources-presentation/}{\underline{Twin Karmakharm}}
+          \item \href{https://rse.shef.ac.uk/rse-dcs-pres-on-hpc/}{\underline{Will Furnass}}
+        \end{itemize}
       \end{column}
     \end{columns}
   \end{frame}
@@ -389,16 +401,17 @@
   \end{frame}
 
   \begin{frame}{Great Resources}
+    \begin{center}
+      \href{https://www.britishecologicalsociety.org/wp-content/uploads/2017/12/guide-to-reproducible-code.pdf}{\includegraphics[height=0.4\textheight]{bes_reproducible_code.jpg}}
+      \hspace{1cm}
+      \href{https://the-turing-way.netlify.app/}{\includegraphics[height=0.4\textheight]{turing_way.jpg}}
+    \end{center}
     \begin{itemize}
       \item \href{https://www.britishecologicalsociety.org/wp-content/uploads/2017/12/guide-to-reproducible-code.pdf}{\underline{BES Guide to Reproducible Research Code}}
       \item \href{https://the-turing-way.netlify.app/}{\underline{The Turing Way}}
       \item \href{https://software.ac.uk/}{\underline{Software Sustainability Institute}}
+      \item \href{https://github.com/davidwilby/ResearchSoftwareMethods}{\underline{This talk!}}
     \end{itemize}
-    \begin{center}
-      \includegraphics[height=0.4\textheight]{bes_reproducible_code.jpg}
-      \hspace{1cm}
-      \includegraphics[height=0.4\textheight]{turing_way.jpg}
-    \end{center}
   \end{frame}
 
 \end{document}
