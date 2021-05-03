@@ -134,15 +134,20 @@
 
 
   \begin{frame}{Git learning resources}
-
-  \begin{itemize}
-    \item \href{http://swcarpentry.github.io/git-novice/}{\underline{software carpentry lesson}}
-    \item \textit{"oh sh** git"} - \href{https://wizardzines.com/zines/oh-shit-git/}{\underline{zine}}, or \href{https://ohshitgit.com/}{\underline{blog}}
-    \item \href{https://the-turing-way.netlify.app/reproducible-research/vcs.html}{\underline{The Turing Way}}
-    \item \href{https://stackoverflow.com/}{\underline{stack overflow}} \textit{etc.} - \textit{use carefully}
-    \item blogs on \href{https://dev.to/}{\underline{dev}} or \href{https://www.atlassian.com/git/tutorials}{\underline{atlassian}} \textit{etc.}
-  \end{itemize}
-
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item \href{http://swcarpentry.github.io/git-novice/}{\underline{software carpentry lesson}}
+        \item \textit{"oh sh** git"} - \href{https://wizardzines.com/zines/oh-shit-git/}{\underline{zine}}, or \href{https://ohshitgit.com/}{\underline{blog}}
+        \item \href{https://the-turing-way.netlify.app/reproducible-research/vcs.html}{\underline{The Turing Way}}
+        \item \href{https://stackoverflow.com/}{\underline{stack overflow}} \textit{etc.} - \textit{use carefully}
+        \item blogs on \href{https://dev.to/}{\underline{dev}} or \href{https://www.atlassian.com/git/tutorials}{\underline{atlassian}} \textit{etc.}
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \includegraphics[height=0.8\textheight]{ohshitgit.png}
+    \end{column}
+  \end{columns}
   \end{frame}
 
 
@@ -259,7 +264,7 @@ README.md\end{verbatim}
         \begin{itemize}
           \item be consistent
           \item include a license
-          \item machine readable filenames
+          \item use machine/human readable filenames
         \end{itemize}
       \end{column}  
   \end{columns}
@@ -268,6 +273,8 @@ README.md\end{verbatim}
   \note[itemize]{
   \item human readable filenames
   \item file specific READme files
+  \item keep notes alongside your code, even if it's just for yourself
+  \item keep papers too
   }
 
   \begin{frame}{Best practice - environment management}
@@ -302,11 +309,16 @@ README.md\end{verbatim}
     \end{itemize}
   \end{frame}
 
-  \begin{frame}{Resources}
+  \begin{frame}{Great Resources}
     \begin{itemize}
       \item \href{https://www.britishecologicalsociety.org/wp-content/uploads/2017/12/guide-to-reproducible-code.pdf}{\underline{BES Guide to Reproducible Research Code}}
       \item \href{https://the-turing-way.netlify.app/}{\underline{The Turing Way}}
     \end{itemize}
+    \begin{center}
+      \includegraphics[height=0.4\textheight]{bes_reproducible_code.jpg}
+      \hspace{1cm}
+      \includegraphics[height=0.4\textheight]{turing_way.jpg}
+    \end{center}
   \end{frame}
 
 \end{document}
