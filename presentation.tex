@@ -1,5 +1,6 @@
 %preamble
 \documentclass{beamer} % use the beamer package for presentations
+% \documentclass[notes=only]{beamer} %compile with this line uncommented to produce speaker notes
 \usetheme{metropolis} % use the metropolis theme
 \usepackage{wrapfig} % for text wrapping around figures
 
@@ -105,42 +106,46 @@
   \end{frame}
 
 
+% Version Control
+  \begin{frame}{Why use version control?}
+
+    \begin{itemize}
+      \item try new ideas,
+      \item confidence,
+      \item ease of backing up (on remotes),
+      \item collaboration,
+    \end{itemize}
+    
+  \end{frame}
 
 
   \begin{frame}{Version Control}
-    \begin{columns}
-      \column{0.5\textwidth}
-        How to use Git:
-        \begin{itemize}
-          \item \href{https://git-scm.com/}{Command Line Git \includegraphics[height=.05\textheight]{git}}
-          \item \href{https://code.visualstudio.com/}{VS Code \includegraphics[height=.05\textheight]{vscode}}
-          \item \href{https://www.gitkraken.com/}{GitKraken \includegraphics[height=.05\textheight]{gitkraken}}
-          \item \href{https://gitforwindows.org/}{Git Bash \includegraphics[height=.07\textheight]{gitbash}}
-          \item + many more...
-        \end{itemize}
-
-
-      \column{0.5\textwidth}
-      Benefits of version control:
-      \begin{itemize}
-        \item try new ideas,
-        \item confidence,
-        \item ease of backing up (on remotes),
-        \item 
-      \end{itemize}
-    \end{columns}
-    
-    \vspace{1cm}
-
-    Learning resources:
+    Ways to use Git:
     \begin{itemize}
-      \item \href{http://swcarpentry.github.io/git-novice/}{\underline{software carpentry lesson material}}
-      \item \textit{"oh sh** git"} - \href{https://wizardzines.com/zines/oh-shit-git/}{\underline{zine}}, or \href{https://ohshitgit.com/}{\underline{blog}}
-      \item \href{https://stackoverflow.com/}{\underline{stack overflow}} \textit{etc.} - \textit{use carefully}
-      \item blogs on \href{https://dev.to/}{\underline{dev}} or \href{https://www.atlassian.com/git/tutorials}{\underline{atlassian}} \textit{etc.}
+      \item \href{https://git-scm.com/}{Command Line Git \includegraphics[height=.05\textheight]{git}}
+      \item \href{https://code.visualstudio.com/}{VS Code \includegraphics[height=.05\textheight]{vscode}}
+      \item \href{https://www.gitkraken.com/}{GitKraken \includegraphics[height=.05\textheight]{gitkraken}}
+      \item \href{https://gitforwindows.org/}{Git Bash \includegraphics[height=.07\textheight]{gitbash}}
+      \item + many more...
     \end{itemize}
 
   \end{frame}
+
+
+
+  \begin{frame}{Git learning resources}
+
+  \begin{itemize}
+    \item \href{http://swcarpentry.github.io/git-novice/}{\underline{software carpentry lesson}}
+    \item \textit{"oh sh** git"} - \href{https://wizardzines.com/zines/oh-shit-git/}{\underline{zine}}, or \href{https://ohshitgit.com/}{\underline{blog}}
+    \item \href{https://the-turing-way.netlify.app/reproducible-research/vcs.html}{\underline{The Turing Way}}
+    \item \href{https://stackoverflow.com/}{\underline{stack overflow}} \textit{etc.} - \textit{use carefully}
+    \item blogs on \href{https://dev.to/}{\underline{dev}} or \href{https://www.atlassian.com/git/tutorials}{\underline{atlassian}} \textit{etc.}
+  \end{itemize}
+
+  \end{frame}
+
+
 
   \begin{frame}[fragile]{Git - useful commands}
     \begin{tcblisting}{beamer,colback=black,colupper=white,colframe=black,
@@ -221,24 +226,86 @@
   \begin{frame}{Best practice - testing}
   \end{frame}
 
-  \begin{frame}{Best practice - reproducibility}
+  \begin{frame}{Best practice - code style}
+    \pause
+    \begin{itemize}
+      \item Comments
+      \item Conciseness
+      \item DRY - Don't Repeat Yourself
+      \item Modularity
+    \end{itemize}
   \end{frame}
 
-  \begin{frame}{Best practice - code style}
+  \begin{frame}[fragile]{Best practice - project organisation}
+    \begin{columns}
+      \begin{column}{0.3\textwidth}
+        \small
+        \begin{verbatim}
+data/
+docs/
+figs/
+output/
+src/
+tests/
+01_ingest_data.R
+02_clean_data.R
+03_exploratory_analysis.R
+04_fit_models.R
+05_generate_figures.R
+analysis_example.Rproj
+README.md\end{verbatim}
+      \end{column}  
+      \begin{column}{0.5\textwidth}
+        \begin{itemize}
+          \item be consistent
+          \item include a license
+          \item machine readable filenames
+        \end{itemize}
+      \end{column}  
+  \end{columns}
   \end{frame}
+
+  \note[itemize]{
+  \item human readable filenames
+  \item file specific READme files
+  }
 
   \begin{frame}{Best practice - environment management}
   \end{frame}
 
-  \begin{frame}{Computing Resources at Sheffield}
+  \begin{frame}{HPC Resources at Sheffield}
+    Why use HPC?
+    \begin{itemize}
+      \item Parallel computing
+      \item Batch management
+      \item Access to GPUs
+      \item Run analysis elsewhere
+      \item Efficiency
+    \end{itemize}
+
+    Resources available:
+    Tier 3 (university-specific):
+    \begin{itemize}
+      \item ShARC
+      \item Bessemer
+    \end{itemize}
+
   \end{frame}
 
-  \begin{frame}{Summary}
+  \begin{frame}{Key Points}
     \begin{itemize}
       \item document, document, document
       \item keep things simple
       \item isolate environments
       \item version code \& data
+      \item try your best!
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}{Resources}
+    \begin{itemize}
+      \item \href{https://www.britishecologicalsociety.org/wp-content/uploads/2017/12/guide-to-reproducible-code.pdf}{\underline{BES Guide to Reproducible Research Code}}
+      \item \href{https://the-turing-way.netlify.app/}{\underline{The Turing Way}}
     \end{itemize}
   \end{frame}
 
