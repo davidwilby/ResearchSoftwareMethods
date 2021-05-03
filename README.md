@@ -42,3 +42,7 @@ This should build the presentation to `./presentation.pdf`
 #### Automated on GitHub
 Tagged commits are automatically built and associated with a release; the built pdf is attached to the release as an asset.
 You can see the workflow for doing this in [`.github/workflows/`](/.github/workflows)
+
+### Contributing
+Contributions and improvements are very welcome! Please fork this repo and make a pull request against the `main` branch.
+Please ensure that your document compiles successfully with the instructions above.
