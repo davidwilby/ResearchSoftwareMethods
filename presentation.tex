@@ -228,7 +228,26 @@
   \begin{frame}{Best practice - documentation}
   \end{frame}
 
-  \begin{frame}{Best practice - testing}
+  \begin{frame}[fragile]{Best practice - testing}
+    \begin{tcolorbox}[skin=beamer,adjusted title=Unit Tests]
+      test the output of a single, basic function
+    \end{tcolorbox}
+    
+    \begin{tcolorbox}[skin=beamer,adjusted title=Integration Tests]
+      test the function of integrated units of code
+    \end{tcolorbox}
+    
+    \begin{tcolorbox}[skin=beamer,adjusted title=Regression Tests]
+      test that software still functions after a change
+    \end{tcolorbox}
+    
+    \tiny
+    Testing in research software:
+    \begin{itemize}
+      \item Still very important,
+      \item Trade-off between cost, flexibility, etc at different points in the development life cycle,
+      \item Useful in collaboration and open-source contribution.
+    \end{itemize}
   \end{frame}
 
   \begin{frame}{Best practice - code style}
@@ -242,32 +261,29 @@
   \end{frame}
 
   \begin{frame}[fragile]{Best practice - project organisation}
-    \begin{columns}
-      \begin{column}{0.3\textwidth}
         \small
         \begin{verbatim}
-data/
-docs/
-figs/
-output/
-src/
-tests/
-01_ingest_data.R
-02_clean_data.R
-03_exploratory_analysis.R
-04_fit_models.R
-05_generate_figures.R
-analysis_example.Rproj
-README.md\end{verbatim}
-      \end{column}  
-      \begin{column}{0.5\textwidth}
-        \begin{itemize}
-          \item be consistent
-          \item include a license
-          \item use machine/human readable filenames
-        \end{itemize}
-      \end{column}  
-  \end{columns}
+  data/
+  docs/
+  figs/
+  output/
+  src/
+  tests/
+  01_ingest_data.R
+  02_clean_data.R
+  03_exploratory_analysis.R
+  04_fit_models.R
+  05_generate_figures.R
+  analysis_example.Rproj
+  README.md\end{verbatim}
+  \end{frame}
+
+  \begin{frame}{Best practice - project organisation}
+    \begin{itemize}
+      \item be consistent
+      \item include a license
+      \item use machine/human readable filenames
+    \end{itemize}
   \end{frame}
 
   \note[itemize]{
@@ -278,25 +294,39 @@ README.md\end{verbatim}
   }
 
   \begin{frame}{Best practice - environment management}
+    \begin{itemize}
+      \item Virtual environments: Conda, Venv, Renv (previously packrat)
+      \item Containers: Docker, Singularity
+      \item Virtual Machines: vagrant etc.
+    \end{itemize}
   \end{frame}
-
+  
   \begin{frame}{HPC Resources at Sheffield}
-    Why use HPC?
-    \begin{itemize}
-      \item Parallel computing
-      \item Batch management
-      \item Access to GPUs
-      \item Run analysis elsewhere
-      \item Efficiency
-    \end{itemize}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        Why use HPC?
+        \begin{itemize}
+          \item Parallel computing
+          \item Batch management
+          \item Access to GPUs
+          \item Run analysis elsewhere
+          \item Efficiency
+        \end{itemize}
 
-    Resources available:
-    Tier 3 (university-specific):
-    \begin{itemize}
-      \item ShARC
-      \item Bessemer
-    \end{itemize}
+        \vspace{1cm}
 
+        Resources available at TUoS:
+        \begin{itemize}
+          \item \href{https://docs.hpc.shef.ac.uk/en/latest/sharc/index.html}{\underline{ShARC}}
+          \item \href{https://docs.hpc.shef.ac.uk/en/latest/bessemer/index.html}{\underline{Bessemer}}
+        \end{itemize}
+      \end{column}
+      
+      \begin{column}{0.5\textwidth}
+        \includegraphics[width=\textwidth]{iceberg2014.jpg}
+        \tiny{Image: \href{https://www.sheffield.ac.uk/it-services/research/hpc/sharc}{TUoS Research IT}}
+      \end{column}
+    \end{columns}
   \end{frame}
 
   \begin{frame}{Key Points}
@@ -313,6 +343,7 @@ README.md\end{verbatim}
     \begin{itemize}
       \item \href{https://www.britishecologicalsociety.org/wp-content/uploads/2017/12/guide-to-reproducible-code.pdf}{\underline{BES Guide to Reproducible Research Code}}
       \item \href{https://the-turing-way.netlify.app/}{\underline{The Turing Way}}
+      \item \href{https://software.ac.uk/}{\underline{Software Sustainability Institute}}
     \end{itemize}
     \begin{center}
       \includegraphics[height=0.4\textheight]{bes_reproducible_code.jpg}
