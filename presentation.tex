@@ -169,36 +169,42 @@
 
 
   \begin{frame}{Version Control}
-    Ways to use Git:
-    \begin{itemize}
-      \item \href{https://git-scm.com/}{Command Line Git \includegraphics[height=.05\textheight]{git}}
-      \item \href{https://code.visualstudio.com/}{VS Code \includegraphics[height=.05\textheight]{vscode}}
-      \item \href{https://www.gitkraken.com/}{GitKraken \includegraphics[height=.05\textheight]{gitkraken}}
-      \item \href{https://gitforwindows.org/}{Git Bash \includegraphics[height=.07\textheight]{gitbash}}
-      \item + many more...
-    \end{itemize}
-
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        Ways to use Git locally:
+        \begin{itemize}
+          \item \href{https://git-scm.com/}{Command Line Git \includegraphics[height=.05\textheight]{git}}
+          \item \href{https://code.visualstudio.com/}{VS Code \includegraphics[height=.05\textheight]{vscode}}
+          \item \href{https://www.gitkraken.com/}{GitKraken \includegraphics[height=.05\textheight]{gitkraken}}
+          \item \href{https://gitforwindows.org/}{Git Bash \includegraphics[height=.07\textheight]{gitbash}}
+          \item \href{https://www.rstudio.com/}{RStudio}
+          \item + many more
+        \end{itemize}
+      \end{column}  
+      \begin{column}[t]{0.5\textwidth}
+        Online:
+        \begin{itemize}
+          \item \href{https://github.com/}{GitHub \includegraphics[height=.05\textheight]{github.png}}
+          \item \href{https://gitlab.com/}{GitLab \includegraphics[height=.05\textheight]{gitlab.png}}
+          \item \href{https://bitbucket.org/}{Bitbucket}
+        \end{itemize}
+      \end{column}  
+    \end{columns}
   \end{frame}
 
-
-
-  \begin{frame}{Git learning resources}
-  \begin{columns}
-    \begin{column}{0.5\textwidth}
-      \begin{itemize}
-        \item \href{http://swcarpentry.github.io/git-novice/}{\underline{software carpentry lesson}}
-        \item \textit{"oh sh** git"} - \href{https://wizardzines.com/zines/oh-shit-git/}{\underline{zine}}, or \href{https://ohshitgit.com/}{\underline{blog}}
-        \item \href{https://the-turing-way.netlify.app/reproducible-research/vcs.html}{\underline{The Turing Way}}
-        \item \href{https://stackoverflow.com/}{\underline{stack overflow}} \textit{etc.} - \textit{use carefully}
-        \item blogs on \href{https://dev.to/}{\underline{dev}} or \href{https://www.atlassian.com/git/tutorials}{\underline{atlassian}} \textit{etc.}
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.5\textwidth}
-      \includegraphics[height=0.8\textheight]{ohshitgit.png}
-    \end{column}
-  \end{columns}
+  \begin{frame}{VS Code}
+    \begin{center}
+      \includegraphics[width=1.1\textwidth]{vscode_screenshot.png}
+    \end{center}
   \end{frame}
 
+  \begin{frame}{GitKraken}
+    \includegraphics[width=\textwidth]{gitkraken_screenshot.png}
+  \end{frame}
+
+  \begin{frame}{Command Line Git}
+    \includegraphics[width=\textwidth]{git_cmd_line_screenshot.png}
+  \end{frame}
 
 
   \begin{frame}[fragile]{Git - useful commands}
@@ -210,6 +216,24 @@
     Show current branch, staged/tracked/untracked files, current status.
     \includegraphics[height=.6\textheight]{git_status_output.png}
   \end{frame}
+
+  
+  \begin{frame}{Git learning resources}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \begin{itemize}
+          \item \href{http://swcarpentry.github.io/git-novice/}{\underline{software carpentry lesson}}
+          \item \textit{"oh sh** git"} - \href{https://wizardzines.com/zines/oh-shit-git/}{\underline{zine}}, or \href{https://ohshitgit.com/}{\underline{blog}}
+          \item \href{https://the-turing-way.netlify.app/reproducible-research/vcs.html}{\underline{The Turing Way}}
+          \item \href{https://stackoverflow.com/}{\underline{stack overflow}} \textit{etc.} - \textit{use carefully}
+          \item blogs on \href{https://dev.to/}{\underline{dev}} or \href{https://www.atlassian.com/git/tutorials}{\underline{atlassian}} \textit{etc.}
+        \end{itemize}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \includegraphics[height=0.8\textheight]{ohshitgit.png}
+      \end{column}
+    \end{columns}
+    \end{frame}
 
   \begin{frame}[fragile]
     'stash' your current unstaged changes.\newline
