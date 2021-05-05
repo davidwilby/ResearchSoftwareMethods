@@ -4,6 +4,9 @@
 \usetheme{metropolis} % use the metropolis theme
 \usepackage{wrapfig} % for text wrapping around figures
 
+% used for making links within the document
+\usepackage{hyperref}
+
 % used for formatting code blocks
 \usepackage[most]{tcolorbox}
 
@@ -14,10 +17,10 @@
 \graphicspath{ {./assets/images/} }
 
 % title slide setup
-\title{A Primer on Methods in \\Research Software Engineering}
+\title{Methods in \\Research Software Engineering}
 \date{6th May 2021}
 \author{Dr David Wilby}
-\institute{Research Software Engineering Team,\\ The University of Sheffield}
+\institute{\href{https://rse.shef.ac.uk}{Research Software Engineering Team},\\ The University of Sheffield}
 \titlegraphic{\vspace*{4cm}\hspace*{7cm}\includegraphics[width=.3\textwidth]{RSE_logo_blackborder}}
 
 % the main document
@@ -29,26 +32,20 @@
 
   \begin{frame}{Outline}
     \begin{itemize}
-      \item Introduction
-      \item Academic Research
-      \item Research Software Engineering
-      \item Version Control
-      \item GitHub (collaboration \& project management)
-      \item Best Practice
-      \begin{itemize}
-        \item Documentation
-        \item Commenting
-        \item Code Style
-        \item Testing
-        \item Licenses
-        \item Repository Organisation
-      \end{itemize}
-      \item Resources
-      \item Nuggets of Wisdom
+      \item \hyperlink{INTRO}{Introduction}
+      \item \hyperlink{RESEARCH}{Academic Research}
+      \item \hyperlink{REPRO}{Reproducibility}
+      \item \hyperlink{RSE}{Research Software Engineering}
+      \item \hyperlink{GIT}{Version Control}
+      \item \hyperlink{GITHUB}{GitHub}
+      \item \hyperlink{BESTPRAC}{Best Practice}
+      \item \hyperlink{LATEX}{LaTeX}
+      \item \hyperlink{HPC}{High-Performance Computing}
+      \item \hyperlink{RESOURCES}{Resources}
     \end{itemize}
   \end{frame}
 
-  \begin{frame}{This Talk}
+  \begin{frame}[label=INTRO]{This Talk}
     \href{https://github.com/davidwilby/ResearchSoftwareMethods}{\includegraphics[width=\textwidth]{talk_repo_screenshot.png}}
     \url{https://github.com/davidwilby/ResearchSoftwareMethods}
   \end{frame}
@@ -126,14 +123,38 @@
     \end{columns}
   \end{frame}
 
-  \begin{frame}{Academic Research}
+  \begin{frame}[label=RESEARCH]{Academic Research}
     \begin{center}
       \includegraphics[height=.8\textheight]{publication_cycle.png}
     \end{center}
     \tiny{Image: \href{https://press.rebus.community/literaturereviewsedunursing/chapter/chapter-2-what-is-a-literature-review/}{Rebus community}}
   \end{frame}
 
-  \begin{frame}{Research Software Engineering}
+  \begin{frame}[label=REPRO]{Reproducibility}
+    Is reproducibility really a problem?
+    \pause
+    \begin{center}
+      \includegraphics[height=.7\textheight]{ioannidis.png}
+    \end{center}
+    \href{https://en.wikipedia.org/wiki/Replication_crisis}{Wikipedia: \underline{Replication crisis}}
+  \end{frame}
+
+  \begin{frame}
+    \begin{center}
+      \includegraphics[height=.8\textheight]{repro_articles.png}
+    \end{center}
+    \tiny
+    \href{https://annakrystalli.me/rrresearchACCE20/slides/01_intro.html}{Credit: Anna Krystalli}
+  \end{frame}
+
+  \begin{frame}
+    \begin{center}
+      \includegraphics[height=.8\textheight]{new_scientist.png}
+    \end{center}
+    \href{https://www.newscientist.com/article/mg24732961-400-frustration-with-excel-has-caused-geneticists-to-rename-some-genes/}{New Scientist}
+  \end{frame}
+
+  \begin{frame}[label=RSE]{Research Software Engineering}
     \begin{columns}
       \begin{column}{0.4\textwidth}
         \textbf{Goals}
@@ -162,20 +183,55 @@
   \end{columns}
   \end{frame}
 
+  \begin{frame}{The FAIR Principles}
+    \begin{columns}
+      \begin{column}{0.3\textwidth}
+        \huge
+        \textbf{F}indable\\
+        \textbf{A}ccessible\\
+        \textbf{I}nteroperable\\
+        \textbf{R}eusable\\
+        \vspace{1cm}
+        \tiny
+        \href{https://www.nature.com/articles/sdata201618}{Wilkinson \textit{et al. Scientific Data} (2016)}
+      \end{column}
+      
+      \begin{column}{0.7\textwidth}
+        \includegraphics[width=\textwidth]{fair-principles.jpg}
+        \tiny
+        Image: \href{http://www.scriberia.co.uk/}{\underline{Scriberia}} for \href{https://the-turing-way.netlify.app/}{\underline{The Turing Way}}
+      \end{column}
+      
+    \end{columns}
+  \end{frame}
 
-  \begin{frame}{Reproducibility}
-    % is reproducibility really a problem?
+  \begin{frame}{Why do we need RSEs?}
+    \begin{itemize}
+      \item 92\% of academics use research software,
+      \item 69\% say their research would not be practical without 
+      \item 56\% develop their own software
+      \item 21\% of those have no training in software development (!)
+    \end{itemize}
+    \vspace{2cm}
+    \tiny
+    Credit: \href{https://www.software.ac.uk/}{Software Sustainability Institute}
   \end{frame}
 
 
 % Version Control
-  \begin{frame}{Why use version control?}
-
+  \begin{frame}[label=GIT]{Why use version control?}
+    \textbf{Interactive exercise}
+    \\
+    Go to \href{https://www.menti.com/}{\underline{menti.com}} and enter the code \textbf{8638 4246}
+    \\
+    or \href{https://www.menti.com/turid6cc7u}{\underline{follow this link}}
+    \vspace{0.5cm}
+    \pause
     \begin{itemize}
       \item try new ideas,
       \item confidence,
       \item ease of backing up (on remotes),
-      \item collaboration,
+      \item facilitate collaboration.
     \end{itemize}
     
   \end{frame}
@@ -301,20 +357,55 @@
     \end{columns}
   \end{frame}
 
-  \begin{frame}{GitHub - collaboration}
-
+  \begin{frame}[label=GITHUB]{GitHub - collaboration}
     \begin{tikzpicture}
       \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=\textwidth]{talk_repo_screenshot.png}};
-      \draw[red,ultra thick,rounded corners] (9.5,6.5) rectangle (10.8,7.3);
+      \draw<1>[red,ultra thick,rounded corners] (9.5,6.5) rectangle (10.8,7.3); % forking
+      \draw<2>[red,ultra thick,rounded corners] (2.5,6) rectangle (4,6.5); % pull requests
     \end{tikzpicture}
+  \end{frame}
 
+  \note[itemize]{
+    \item collaborate and play with existing repositories by forking or cloning
+    \item if you have something to contribute back to a project, make a pull request
+    \item many projects will have contribution guidelines
+    }
+
+
+  \begin{frame}{GitHub - project management}
+    \begin{center}
+      \includegraphics[width=\textwidth]{github_issues_screenshot.png}
+    \end{center}
   \end{frame}
 
   \begin{frame}{GitHub - project management}
+      \includegraphics[width=1.1\textwidth]{github_projects_screenshot.png}
   \end{frame}
 
   \begin{frame}{Best practice - documentation}
+    You should document how to:
+    \begin{itemize}
+      \item install your software,
+      \item use simply,
+      \item more complex use cases,
+      \item contribute,
+      \item add tests,
+      \item how long it will be maintained for,
+      \item where packages are available,
+      \item uninstall
+    \end{itemize}
+    Keep your documentation with the code and keep it up to date as you write more code.\\
+    \pause
+    \textbf{Remember}: documentation is for future you as well as others!
   \end{frame}
+
+  \begin{frame}[fragile]{Best practice - testing}
+    \includegraphics[height=0.8\textheight]{post-office-scandal.png}
+    \\
+    \tiny
+    Credit: \href{https://www.private-eye.co.uk/pictures/special_reports/justice-lost-in-the-post.pdf}{Private Eye}
+  \end{frame}
+
 
   \begin{frame}[fragile]{Best practice - testing}
     \begin{tcolorbox}[skin=beamer,adjusted title=Unit Tests]
@@ -338,13 +429,28 @@
     \end{itemize}
   \end{frame}
 
-  \begin{frame}{Best practice - code style}
-    \pause % a beamer command to allow slide transitions
+  \begin{frame}[label=CI]{Continuous Integration}
+    \begin{center}
+      \href{https://github.com/davidwilby/ResearchSoftwareMethods/actions}{
+      \includegraphics[height=0.9\textheight]{githubactions_screenshot.png}
+      }
+    \end{center}
+  \end{frame}
+
+  \begin{frame}[label=BESTPRAC]{Best practice - code style}
+    \textbf{Interactive exercise}
+    \\
+    Go to \href{https://www.menti.com/}{\underline{menti.com}} and enter the code \textbf{8638 4246}
+    \\
+    or \href{https://www.menti.com/turid6cc7u}{\underline{follow this link}}
+    \vspace{0.5cm}
+    \pause
     \begin{itemize}
       \item Comments
       \item Conciseness
       \item DRY - Don't Repeat Yourself
       \item Modularity
+      \item Follow conventions
     \end{itemize}
   \end{frame}
 
@@ -390,24 +496,46 @@
       e.g. Docker, Singularity
     \end{tcolorbox}
     \begin{tcolorbox}[skin=beamer,adjusted title=Virtual Machines]
-      e.g. Vagrant
+      e.g. Vagrant,  VirtualBox
     \end{tcolorbox}    
   \end{frame}
 
-  % \begin{frame}{Data Management}
-    % version your data
-    % perform cleaning steps programmatically
-    % make plots
-    % process raw data programmatically, don't edit it
-    % don't commit data to your git repo
-  % \end{frame}
+  \begin{frame}[label=DATA]{Data Management}
+    \begin{itemize}
+      \item version your data
+      \item perform cleaning steps programmatically
+      \item make plots
+      \item process raw data programmatically, don't edit it
+      \item don't commit data to your git repo
+    \end{itemize}
+  \end{frame}
 
-  % \begin{frame}{LaTeX}
-    % discuss how latex is useful for scripted document type setting
-    % distinct from code documentation
-  % \end{frame}
+  \begin{frame}[label=LATEX]{\LaTeX}
+    \includegraphics[width=\textwidth]{latex_example.png}
+    \tiny
+    Image: \href{https://data-mining.philippe-fournier-viger.com/using-latex-for-writing-research-papers/}{The Data Mining Blog}
+  \end{frame}
+
+  \begin{frame}{\LaTeX}
+    \textbf{Why bother?}
+    \begin{itemize}
+      \item Scripted (i.e. text-based) documents are simpler to version control,
+      \item Referencing is much cleaner,
+      \item Simpler management of large documents,
+      \item It's free,
+      \item Portability,
+      \item Aesthetics,
+      \item Maths typesetting,
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}{\LaTeX}
+    Alternatively use a GUI such as \href{https://www.lyx.org/}{LyX}
+    \\
+    \includegraphics[height=\textheight]{lyx.png}
+  \end{frame}
   
-  \begin{frame}{High-Performance Computing}
+  \begin{frame}[label=HPC]{High-Performance Computing}
     \begin{columns}
       \begin{column}{0.5\textwidth}
         Why use HPC?
@@ -454,7 +582,7 @@
     \end{itemize}
   \end{frame}
 
-  \begin{frame}{Great Resources}
+  \begin{frame}[label=RESOURCES]{Great Resources}
     \begin{center}
       \href{https://www.britishecologicalsociety.org/wp-content/uploads/2019/06/BES-Guide-Reproducible-Code-2019.pdf}{\includegraphics[height=0.4\textheight]{bes_reproducible_code.jpg}}
       \hspace{1cm}
