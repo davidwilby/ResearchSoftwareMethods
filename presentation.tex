@@ -7,6 +7,9 @@
 % used for formatting code blocks
 \usepackage[most]{tcolorbox}
 
+% used for drawing shapes
+\usepackage{tikz}
+
 % sets the location of the graphics directory
 \graphicspath{ {./assets/images/} }
 
@@ -160,6 +163,11 @@
   \end{frame}
 
 
+  \begin{frame}{Reproducibility}
+    % is reproducibility really a problem?
+  \end{frame}
+
+
 % Version Control
   \begin{frame}{Why use version control?}
 
@@ -294,9 +302,12 @@
   \end{frame}
 
   \begin{frame}{GitHub - collaboration}
-    \begin{itemize}
-      \item 
-    \end{itemize}
+
+    \begin{tikzpicture}
+      \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=\textwidth]{talk_repo_screenshot.png}};
+      \draw[red,ultra thick,rounded corners] (9.5,6.5) rectangle (10.8,7.3);
+    \end{tikzpicture}
+
   \end{frame}
 
   \begin{frame}{GitHub - project management}
@@ -328,7 +339,7 @@
   \end{frame}
 
   \begin{frame}{Best practice - code style}
-    \pause
+    \pause % a beamer command to allow slide transitions
     \begin{itemize}
       \item Comments
       \item Conciseness
@@ -363,6 +374,7 @@
     \end{itemize}
   \end{frame}
 
+  % notes for slide above, only compiled with [notes] beamer flag (above)
   \note[itemize]{
   \item human readable filenames
   \item file specific READme files
@@ -381,6 +393,19 @@
       e.g. Vagrant
     \end{tcolorbox}    
   \end{frame}
+
+  % \begin{frame}{Data Management}
+    % version your data
+    % perform cleaning steps programmatically
+    % make plots
+    % process raw data programmatically, don't edit it
+    % don't commit data to your git repo
+  % \end{frame}
+
+  % \begin{frame}{LaTeX}
+    % discuss how latex is useful for scripted document type setting
+    % distinct from code documentation
+  % \end{frame}
   
   \begin{frame}{High-Performance Computing}
     \begin{columns}
@@ -422,8 +447,8 @@
     \begin{itemize}
       \item document, document, document
       \item keep things simple
+      \item version control code \& data
       \item isolate environments
-      \item version code \& data
       \item good research code is just good code
       \item try your best!
     \end{itemize}
