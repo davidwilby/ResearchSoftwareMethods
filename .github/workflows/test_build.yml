@@ -25,4 +25,4 @@ jobs:
           # version: 0.9.600
       - run: |
           mkdir build
-          quarto render presentation.qmd --output-dir build
+          quarto render index.qmd --output-dir build

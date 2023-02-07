@@ -28,7 +28,7 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
       - run: |
           mkdir build
-          quarto render presentation.qmd --output-dir build
+          quarto render index.qmd --output-dir build
       
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
