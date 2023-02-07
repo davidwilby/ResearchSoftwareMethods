@@ -11,7 +11,7 @@ format:
 author: "**Dr David Wilby** (he/him)<br>[RSE Team](https://rse.shef.ac.uk/), The University of Sheffield<br>[**rse.shef.ac.uk**](https://rse.shef.ac.uk) | [**davidwilby.dev**](https://davidwilby.dev)"
 date: 02/13/2023
 date-format: "ddd Do MMMM YYYY"
-footer: "these slides: [davidwilby.dev/ResearchSoftwareMethods](https://davidwilby.dev/ResearchSoftwareMethods) / {{< fa brands github >}} [improve this talk!](https://github.com/davidwilby/ResearchSoftwareMethods)"
+footer: "these slides: [davidwilby.dev/ResearchSoftwareMethods](https://davidwilby.dev/ResearchSoftwareMethods) - {{< fa brands github >}} [improve this talk!](https://github.com/davidwilby/ResearchSoftwareMethods)"
 from: markdown+emoji
 ---
 
@@ -35,8 +35,7 @@ And what am I doing here?
 
 [![](assets/images/bees.png)](https://doi.org/10.1016/j.visres.2019.02.008)
 
-<font size="2">[Wilby *et al.* (2018) *Vision
-Research*](https://doi.org/10.1016/j.visres.2019.02.008)</font>
+[Wilby *et al.* (2018) *Vision Research*](https://doi.org/10.1016/j.visres.2019.02.008)
 
 :::
 
@@ -44,10 +43,7 @@ Research*](https://doi.org/10.1016/j.visres.2019.02.008)</font>
 
 [![](assets/images/jexbio_220_11_coverfig.png){width="80%"}](https://doi.org/10.1242/jeb.152918)
 
-<font size="2">[Wilby *et al.* (2015) *J. R. Soc.
-Interface*](http://dx.doi.org/10.1098/rsif.2015.0591) - 
-[Wilby & Roberts (2017) *J. Exp.
-Biol.*](https://doi.org/10.1242/jeb.152918)</font>
+[Wilby *et al.* (2015) *J. R. Soc. Interface*](http://dx.doi.org/10.1098/rsif.2015.0591) -  [Wilby & Roberts (2017) *J. Exp. Biol.*](https://doi.org/10.1242/jeb.152918)
 
 :::
 
@@ -81,6 +77,7 @@ Go to [menti.com](https://menti.com) and enter the code **8145 3365**
 * Git
 * GitHub
 * Testing
+* Environment & Dependency Management
 
 ##
 
@@ -99,20 +96,19 @@ Can't I just write some code?
 
 ![](assets/images/ioannidis.png)
 
-<font size="2">[Wikipedia: Replication Crisis](https://en.wikipedia.org/wiki/Replication_crisis)</font>
+[Wikipedia: Replication Crisis](https://en.wikipedia.org/wiki/Replication_crisis)
 
 ##
 
 ![](assets/images/repro_articles.png)
 
-<font size="2">Credit: [Anna Krystalli](https://annakrystalli.me/rrresearchACCE20/slides/01_intro.html)</font>
+Credit: [Anna Krystalli](https://annakrystalli.me/rrresearchACCE20/slides/01_intro.html)
 
 ##
 
 ![](assets/images/post-office-scandal.png)
 
-<font size="2">Credit: [Private
-Eye](https://www.private-eye.co.uk/pictures/special_reports/justice-lost-in-the-post.pdf)</font>
+Credit: [Private Eye](https://www.private-eye.co.uk/pictures/special_reports/justice-lost-in-the-post.pdf)
 
 
 # Control yourself
@@ -525,8 +521,7 @@ Everyone makes mistakes.
 
 ![](assets/images/post-office-scandal.png)
 
-<font size="2">Credit: [Private
-Eye](https://www.private-eye.co.uk/pictures/special_reports/justice-lost-in-the-post.pdf)</font>
+From: [Private Eye](https://www.private-eye.co.uk/pictures/special_reports/justice-lost-in-the-post.pdf)
 
 
 ## Levels of testing
