@@ -5,7 +5,6 @@ on:
   push:
     branches: main
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,7 +17,12 @@ jobs:
         uses: swinton/screenshot-website@v1.x
         with:
           source: https://github.com/davidwilby/ResearchSoftwareMethods
-          destination: assets/images/talk_repo_screenshot.png
+          destination: screenshot.png
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: screenshot
+          path: assets/images/
       
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
