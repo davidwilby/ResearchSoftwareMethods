@@ -611,8 +611,8 @@ gitGraph
 </div>
 </div>
 </section>
-<section id="aside-the-commit-hash" class="slide level2">
-<h2>Aside: the commit hash</h2>
+<section id="the-commit-hash" class="slide level2">
+<h2>The commit hash</h2>
 <p><br></p>
 <p>Git generates a hash string, uniquely identifying each commit.</p>
 <div class="callout callout-note callout-style-simple">
@@ -634,6 +634,35 @@ gitGraph
 <p><br></p>
 <p>But are most often seen as the first 7 characters, as this is easier to read/type and is normally enough to identify the commit.</p>
 <p><code>d3dd03f</code></p>
+</div>
+</section>
+<section id="the-commit-message" class="slide level2">
+<h2>The commit message</h2>
+<p>Each commit has a <em>message</em> associated with it.</p>
+<p><br></p>
+<p><strong>Summary/Title</strong>: &lt;50-72 characters</p>
+<p>Displayed most frequently.</p>
+<p><br></p>
+<p><strong>Detailed description</strong>: no character limit.</p>
+<p><em>Can</em> be used to capture more detail. Not used that often.</p>
+<div class="fragment">
+<p><br></p>
+<h3 id="this-commit-will">This commit will…</h3>
+<div class="columns">
+<div class="column" style="width:30%;">
+<ul>
+<li><span class="emoji" data-emoji="x">❌</span> some stuff</li>
+<li><span class="emoji" data-emoji="x">❌</span> code</li>
+<li><span class="emoji" data-emoji="x">❌</span> updates</li>
+</ul>
+</div><div class="column" style="width:70%;">
+<ul>
+<li><span class="emoji" data-emoji="heavy_check_mark">✔️</span> add new module “renderers”</li>
+<li><span class="emoji" data-emoji="heavy_check_mark">✔️</span> update README with new install instructions</li>
+<li><span class="emoji" data-emoji="heavy_check_mark">✔️</span> fix bug #17 with package update</li>
+</ul>
+</div>
+</div>
 </div>
 </section>
 <section id="branches-fa-solid-code-branch" class="slide level2">
@@ -665,7 +694,7 @@ gitGraph
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-note callout-style-simple">
+<div class="callout callout-tip callout-style-simple">
 <div class="callout-body">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -717,14 +746,14 @@ gitGraph
 <p>or</p>
 <div id="qrcode" class="qrcode"></div>
 <script type="text/javascript">
-var qrcode = new QRCode("qrcode", {"height":"350","colorLight":"#ffffff","text":"https://onlywei.github.io/explain-git-with-d3","width":"350","colorDark":"#000000"});
+var qrcode = new QRCode("qrcode", {"height":"350","colorDark":"#000000","colorLight":"#ffffff","width":"350","text":"https://onlywei.github.io/explain-git-with-d3"});
 </script>
     
 </section>
 <section id="repositories-repos" class="slide level2">
 <h2>Repositories (Repos)</h2>
 <p><br></p>
-<div class="callout callout-note callout-style-simple">
+<div class="callout callout-tip callout-style-simple">
 <div class="callout-body">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -854,48 +883,101 @@ var qrcode = new QRCode("qrcode", {"height":"350","colorLight":"#ffffff","text":
 
 <img data-src="assets/images/post-office-scandal.png" class="r-stretch"><p><font size="2">Credit: <a href="https://www.private-eye.co.uk/pictures/special_reports/justice-lost-in-the-post.pdf">Private Eye</a></font></p>
 </section>
+<section id="levels-of-testing" class="slide level2">
+<h2>Levels of testing</h2>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p><strong>Smoke Testing</strong> Very brief initial checks that ensures the basic requirements required to run the project hold. If these fail there is no point proceeding to additional levels of testing until they are fixed.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p><strong>Unit Testing</strong> A level of the software testing process where individual units of a software are tested. The purpose is to validate that each unit of the software performs as designed.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p><strong>Integration Testing</strong> A level of software testing where individual units are combined and tested as a group. The purpose of this level of testing is to expose faults in the interaction between integrated units.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p><strong>System Testing</strong> A level of the software testing process where a complete, integrated system is tested. The purpose of this test is to evaluate whether the system as a whole gives the correct outputs for given inputs.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p><strong>Acceptance Testing</strong> A level of the software testing process where a system is tested for acceptability. The purpose of this test is to evaluate the system’s compliance with the project requirements and assess whether it is acceptable for the purpose.</p>
+</div>
+</div>
+</div>
+<p>From: <a href="https://the-turing-way.netlify.app/reproducible-research/testing.html">The Turing Way</a></p>
+</section>
+<section id="test-driven-development" class="slide level2">
+<h2>Test-driven development</h2>
+<div>
+<ol type="1">
+<li class="fragment">Write a test that fails</li>
+<li class="fragment">Write code to make the test pass</li>
+<li class="fragment">Refactor</li>
+</ol>
+</div>
+</section>
 <section id="section-5" class="slide level2">
 <h2></h2>
-<h3 id="testing-can-be-split-into-different-scales">Testing can be split into different scales</h3>
-<p><br></p>
-<div class="callout callout-note callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div class="cell" data-reveal="true" data-fig-height="7">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-5">flowchart TB
+    classDef writecode fill:#7D7ABC,stroke-width:0px;
+    classDef testspass fill:#23F0C7,stroke-width:0px;
+    classDef testsfail fill:#EF767A,stroke-width:0px;
+    subgraph id1 [code-driven development]
+        A((write test)) --&gt; B((test&lt;br&gt;passes/fails))
+        B--&gt;|test passes|A
+        B--&gt;|test fails|C((Write only&lt;br&gt;enough code))
+        C--&gt;|test fails|C
+    end
+    subgraph id2 [refactoring]
+        C--&gt;|test passes|D((Check all tests))
+        D--&gt;|tests pass|E((Refactor))
+        E--&gt;D
+        D--&gt;|Some tests fail|F((Update failing tests&lt;br&gt;Correct regressions))
+        F--&gt;D
+    end
+    class A,C,E,F writecode;
+    class B testsfail;
+    class D testspass;
+</pre>
+<div id="mermaid-tooltip-5" class="mermaidTooltip">
+
 </div>
-<p><strong>Unit Testing</strong></p>
-</div>
-<div class="callout-content">
-<p>Tests the smallest possible units of code, e.g.&nbsp;functions or class methods.</p>
-</div>
-</div>
-</div>
-<p><br></p>
-<div class="callout callout-note callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Integration Testing</strong></p>
-</div>
-<div class="callout-content">
-<p>Test for errors when units function together.</p>
-</div>
-</div>
-</div>
-<p><br></p>
-<div class="callout callout-note callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Regression Testing</strong></p>
-</div>
-<div class="callout-content">
-<p>Tests that new functionality doesn’t break existing functionality.</p>
+<p></p>
 </div>
 </div>
 </div>
