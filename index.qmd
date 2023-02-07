@@ -1,5 +1,5 @@
 ---
-title: "How to suck less at<br>(research)<br>software engineering"
+title: "Good practice:<br>How to suck less at<br>(research)<br>software engineering"
 format:
     revealjs:
         theme: custom.scss
@@ -7,6 +7,7 @@ format:
         show-slide-number: speaker
         chalkboard: true
         code-line-numbers: false
+        preview-links: auto
 author: "**Dr David Wilby** (he/him)<br>[RSE Team](https://rse.shef.ac.uk/), The University of Sheffield<br>[**rse.shef.ac.uk**](https://rse.shef.ac.uk) | [**davidwilby.dev**](https://davidwilby.dev)"
 date: 02/13/2023
 date-format: "ddd Do MMMM YYYY"
@@ -76,6 +77,10 @@ Go to [menti.com](https://menti.com) and enter the code **8145 3365**
 
 ## Outline
 
+* Why do we need good practice?
+* Git
+* GitHub
+* Testing
 
 ##
 
@@ -202,7 +207,7 @@ The most important concept in git is the `commit` - the name given to a unit of 
 :::
 
 
-## Making a commit
+## Making a commit {{< fa solid code-commit >}}
 
 ```{mermaid}
 %%| fig-height: 6
@@ -220,7 +225,7 @@ Git generates a hash string, uniquely identifying each commit.
 
 ::: {.callout-note appearance="simple"}
 
-Git uses a "Merkle tree" under the hood. (Don't ask me how it works)
+Git uses a "[Merkle tree](https://en.wikipedia.org/wiki/Merkle_tree)" under the hood. (Don't ask me how it works, I have no idea :shrug:)
 
 :::
 
@@ -244,8 +249,6 @@ But are most often seen as the first 7 characters, as this is easier to read/typ
 
 ## Branches  {{< fa solid code-branch >}}
 
-<br>
-
 Used to work on new features/changes/additions to the code.
 
 <br>
@@ -261,6 +264,21 @@ gitGraph
     commit id:"bec84f4"
     commit id:"2420edd"
 ```
+
+```bash
+git branch experiment
+git checkout experiment
+git commit
+git commit
+git commit
+```
+
+
+::: {.callout-note appearance="simple"}
+
+**Checkout**: switching to a different branch.
+
+:::
 
 
 ## Merging  {{< fa solid code-merge >}}
@@ -286,8 +304,14 @@ gitGraph
     commit id:"60489ec"
 ```
 
+```bash
+git checkout main
+git merge experiment
+git commit
+```
 
-## Simple demo
+
+## Demo
 
 <br>
 
@@ -299,12 +323,58 @@ or
 
 or
 
+
+{{< qrcode https://onlywei.github.io/explain-git-with-d3 width=350 height=350 >}}
+
+
+## Repositories (Repos)
+
 <br>
 
-{{< qrcode https://onlywei.github.io/explain-git-with-d3 >}}
+::: {.callout-note appearance="simple"}
+
+Once a directory/folder is *initialised* with `git` it becomes a *repository*.
+
+<br>
+
+:::
+
+::: columns
+
+::: {.column width="40%"}
+**directory**
+```
+.
+├── src/
+├── LICENSE.md
+└── README.md
+```
+:::
+
+::: {.column width="20%"}
+
+`git init`
+------->
+
+:::
+
+::: {.column width="40%"}
+
+**repository**
+```
+.
+├── .git/
+├── src/
+├── LICENSE.md
+└── README.md
+```
+
+:::
+
+:::
 
 
-## Where to use Git
+## How to interact with Git
 
 <br>
 
@@ -312,6 +382,7 @@ or
 via unix shell (or gitbash/WSL on Windows)
 
 ```bash
+$ git add README.md
 $ git commit -m 'initial commit'
 $ git status
 ```
@@ -351,11 +422,22 @@ $ git status
 ::: {.column width="60%"}
 
 * [Pro Git Book](http://git-scm.com/book/en/v2)
-* [software carpentry lesson](http://swcarpentry.github.io/git-novice/)
+* [Software carpentry lesson](http://swcarpentry.github.io/git-novice/)
 * *\"oh sh\*\* git\"* - [zine](https://wizardzines.com/zines/oh-shit-git/), or [blog](https://ohshitgit.com/)
 * [The Turing Way](https://the-turing-way.netlify.app/reproducible-research/vcs.html)
 * [stack overflow](https://stackoverflow.com/) *etc.* - *use carefully* :warning:
 * blogs on [dev](https://dev.to/) or [atlassian](https://www.atlassian.com/git/tutorials) *etc.*
+
+::: {.callout-warning appearance="simple"}
+
+**Remember**
+
+Learning Git is a process.
+
+Everyone makes mistakes.
+
+:::
+
 
 :::
 
@@ -365,7 +447,41 @@ $ git status
 
 :::
 
-## Git vs GitHub
+## Git {{< fa brands git-alt >}} vs GitHub {{< fa brands github >}} or GitLab {{< fa brands gitlab >}}
+
+<br>
+
+**Git**
+
+* Local client for source code management
+* Interacting with remote git servers
+
+**GitHub/GitLab**
+
+* Code hosting
+* Collaboration
+* OSS contribution
+* Project management
+* Automated workflows/continuous delivery
+
+
+## Repositories
+
+![](assets/images/talk_repo_screenshot.png)
+
+## Issues
+
+![](assets/images/github_issues_screenshot.png)
+
+## Projects/Kanban Board
+
+![](assets/images/github_projects_screenshot.png)
+
+
+# Testing
+
+# Environment & Dependency Management
+
 
 ## Great resources
 
