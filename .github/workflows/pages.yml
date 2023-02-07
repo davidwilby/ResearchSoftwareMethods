@@ -12,18 +12,7 @@ jobs:
     steps:
       - name: Check out repo
         uses: actions/checkout@v3
-
-      - name: Screenshot Repo
-        uses: swinton/screenshot-website@v1.x
-        with:
-          source: https://github.com/davidwilby/ResearchSoftwareMethods
-          destination: screenshot.png
-
-      - uses: actions/download-artifact@v3
-        with:
-          name: screenshot
-          path: assets/images/
-      
+   
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
       - run: |
@@ -34,4 +23,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: build # The folder the action should deploy.
-          clean: false
+          clean: true
