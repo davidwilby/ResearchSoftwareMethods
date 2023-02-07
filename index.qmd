@@ -1,0 +1,612 @@
+---
+title: "Good practice:<br>How to suck less at<br>(research)<br>software engineering"
+format:
+    revealjs:
+        theme: custom.scss
+        slide-number: true
+        show-slide-number: speaker
+        chalkboard: true
+        code-line-numbers: false
+        preview-links: auto
+author: "**Dr David Wilby** (he/him)<br>[RSE Team](https://rse.shef.ac.uk/), The University of Sheffield<br>[**rse.shef.ac.uk**](https://rse.shef.ac.uk) | [**davidwilby.dev**](https://davidwilby.dev)"
+date: 02/13/2023
+date-format: "ddd Do MMMM YYYY"
+footer: "these slides: [davidwilby.dev/ResearchSoftwareMethods](https://davidwilby.dev/ResearchSoftwareMethods) / {{< fa brands github >}} [improve this talk!](https://github.com/davidwilby/ResearchSoftwareMethods)"
+from: markdown+emoji
+---
+
+# Firstly
+
+. . .
+
+Who am I?
+
+. . . 
+
+And what am I doing here?
+
+. . .
+
+## Previously: Scientist
+
+::: columns
+
+::: {.column width="50%"}
+
+[![](assets/images/bees.png)](https://doi.org/10.1016/j.visres.2019.02.008)
+
+[Wilby *et al.* (2018) *Vision Research*](https://doi.org/10.1016/j.visres.2019.02.008)
+
+:::
+
+::: {.column width="50%"}
+
+[![](assets/images/jexbio_220_11_coverfig.png){width="80%"}](https://doi.org/10.1242/jeb.152918)
+
+[Wilby *et al.* (2015) *J. R. Soc. Interface*](http://dx.doi.org/10.1098/rsif.2015.0591) -  [Wilby & Roberts (2017) *J. Exp. Biol.*](https://doi.org/10.1242/jeb.152918)
+
+:::
+
+:::
+
+
+## Currently: Research Software Engineer
+
+* Developing research code
+* Educating researchers
+* Translating research into production software
+* Working with government
+* Advocating for quality research practice
+
+
+# Secondly
+
+Who are you?
+
+. . .
+
+## :rotating_light: Audience participation :rotating_light:
+
+. . .
+
+Go to [menti.com](https://menti.com) and enter the code **8145 3365**
+
+## Outline
+
+* Why do we need good practice?
+* Git
+* GitHub
+* Testing
+* Environment & Dependency Management
+
+##
+
+[![](assets/images/talk_repo_screenshot.png)](https://github.com/davidwilby/ResearchSoftwareMethods){width="80%"}
+
+<https://github.com/davidwilby/ResearchSoftwareMethods>
+
+<https://bit.ly/RSEmethods>
+
+
+
+## Why do we need good practice?
+Can't I just write some code?
+
+##
+
+![](assets/images/ioannidis.png)
+
+[Wikipedia: Replication Crisis](https://en.wikipedia.org/wiki/Replication_crisis)
+
+##
+
+![](assets/images/repro_articles.png)
+
+Credit: [Anna Krystalli](https://annakrystalli.me/rrresearchACCE20/slides/01_intro.html)
+
+##
+
+![](assets/images/post-office-scandal.png)
+
+Credit: [Private Eye](https://www.private-eye.co.uk/pictures/special_reports/justice-lost-in-the-post.pdf)
+
+
+# Control yourself
+Why you **need** version control
+
+\+
+
+getting your head round it.
+
+## What makes a version control system?
+
+* :camera_flash: Snapshot current version
+* :label: Name specific versions
+* :leftwards_arrow_with_hook: Revert back to a version
+
+Perhaps
+
+* :books: Compare and merge versions
+
+
+## Benefits of version control
+
+
+. . .
+
+**Git** (local) :computer:
+
+* Protect against breaking *everything*
+* Keep at least one working version of the code
+* Snapshot your progress
+
+. . .
+
+**GitHub/GitLab** (remote) :globe_with_meridians:
+
+* Work collaboratively
+* Share code easily
+* Remote backup
+
+## Without version control
+
+<br>
+
+. . .
+
+:confused: Make changes by making a copy of the entire codebase.
+
+<br>
+
+. . . 
+
+:neutral_face: Merging is a manual process.
+
+<br>
+
+. . .
+
+:fearful: Lose track of which version contains what functionality.
+
+<br>
+
+. . .
+
+:sob: Collaborating is just emailing zip files and crying.
+
+<br>
+
+# Version Control == Git
+
+. . .
+
+More often than not
+
+## How does Git work?
+```{mermaid}
+%%| fig-width: 10
+%%{init: { 'logLevel': 'debug', 'theme': 'base', 'gitGraph': {'showCommitLabel': true, 'rotateCommitLabel': true}} }%%
+gitGraph
+    commit id: "commit 1"
+    commit id: "commit 2"
+    commit id: "commit 3"
+    commit id: "commit 4"
+    commit id: "commit 5"
+    commit id: "commit 6"
+    commit id: "commit 7"
+```
+
+::: {.callout-note appearance="simple"}
+
+The most important concept in git is the `commit` - the name given to a unit of changes, and also to the process of making a commit.
+
+:::
+
+
+## Making a commit {{< fa solid code-commit >}}
+
+```{mermaid}
+%%| fig-height: 6
+    flowchart TB
+        A(fa:fa-pen fa:fa-file-code<br>Edit file) --> B
+        B(fa:fa-download<br>Save) --> C
+        C(fa:fa-plus <br><strong>Stage</strong><br>changes) --> D(fa:fa-check<br>Commit)
+```
+
+## The commit hash
+
+<br>
+
+Git generates a hash string, uniquely identifying each commit.
+
+::: {.callout-note appearance="simple"}
+
+Git uses a "[Merkle tree](https://en.wikipedia.org/wiki/Merkle_tree)" under the hood. (Don't ask me how it works, I have no idea :shrug:)
+
+:::
+
+. . .
+
+<br>
+
+Hashes look like:
+
+`d3dd03f493707256c8528bc83ad280a460f05a56`
+
+. . .
+
+<br>
+
+But are most often seen as the first 7 characters, as this is easier to read/type and is normally enough to identify the commit.
+
+`d3dd03f`
+
+
+## The commit message
+
+Each commit has a *message* associated with it.
+
+<br>
+
+**Summary/Title**: <50-72 characters
+
+Displayed most frequently.
+
+<br>
+
+**Detailed description**: no character limit.
+
+*Can* be used to capture more detail. Not used that often.
+
+. . .
+
+<br>
+
+### This commit will...
+
+::: columns
+
+::: {.column width="30%"}
+
+* :x: some stuff
+* :x: code
+* :x: updates
+
+:::
+
+::: {.column width="70%"}
+
+* :heavy_check_mark: add new module "renderers"
+* :heavy_check_mark: update README with new install instructions
+* :heavy_check_mark: fix bug #17 with package update
+
+:::
+
+:::
+
+## Branches  {{< fa solid code-branch >}}
+
+Used to work on new features/changes/additions to the code.
+
+<br>
+
+```{mermaid}
+%%| fig-width: 10
+%%{init: { 'logLevel': 'debug', 'theme': 'base'} }%%
+gitGraph
+    commit id:"8bc2520"
+    commit id:"2a70480"
+    branch experiment
+    commit id:"089e06b"
+    commit id:"bec84f4"
+    commit id:"2420edd"
+```
+
+```bash
+git branch experiment
+git checkout experiment
+git commit
+git commit
+git commit
+```
+
+
+::: {.callout-tip appearance="simple"}
+
+**Checkout**: switching to a different branch.
+
+:::
+
+
+## Merging  {{< fa solid code-merge >}}
+
+<br>
+
+Combine changes from two branches.
+
+<br>
+
+```{mermaid}
+%%| fig-width: 10
+%%{init: { 'logLevel': 'debug', 'theme': 'base'} }%%
+gitGraph
+    commit id:"8bc2520"
+    commit id:"2a70480"
+    branch experiment
+    commit id:"089e06b"
+    commit id:"bec84f4"
+    commit id:"2420edd"
+    checkout main
+    merge experiment
+    commit id:"60489ec"
+```
+
+```bash
+git checkout main
+git merge experiment
+git commit
+```
+
+
+## Demo
+
+<br>
+
+<https://onlywei.github.io/explain-git-with-d3>
+
+or
+
+<https://bit.ly/git-sandbox>
+
+or
+
+
+{{< qrcode https://onlywei.github.io/explain-git-with-d3 width=350 height=350 >}}
+
+
+## Repositories (Repos)
+
+<br>
+
+::: {.callout-tip appearance="simple"}
+
+Once a directory/folder is *initialised* with `git` it becomes a *repository*.
+
+<br>
+
+:::
+
+::: columns
+
+::: {.column width="40%"}
+**directory**
+```
+.
+├── src/
+├── LICENSE.md
+└── README.md
+```
+:::
+
+::: {.column width="20%"}
+
+`git init`
+------->
+
+:::
+
+::: {.column width="40%"}
+
+**repository**
+```
+.
+├── .git/
+├── src/
+├── LICENSE.md
+└── README.md
+```
+
+:::
+
+:::
+
+
+## How to interact with Git
+
+<br>
+
+### command line `git`  {{< fa brands git-alt >}}
+via unix shell (or gitbash/WSL on Windows)
+
+```bash
+$ git add README.md
+$ git commit -m 'initial commit'
+$ git status
+```
+
+<br>
+
+. . .
+
+::: columns
+
+::: {.column width="50%"}
+
+### IDEs
+* [VSCode](https://code.visualstudio.com/)
+* [RStudio](https://posit.co/download/rstudio-desktop/)
+* [PyCharm](https://www.jetbrains.com/pycharm/)
+* [Emacs](https://www.gnu.org/software/emacs/)
+
+:::
+
+::: {.column width="50%"}
+
+### Other GUIs
+* [GitKraken Client {{< fa brands gitkraken >}}](https://www.gitkraken.com/)
+* [GitHub Desktop {{< fa brands github >}}](https://desktop.github.com/)
+* [etc. etc.](https://git-scm.com/downloads/guis/)
+
+
+:::
+
+:::
+
+## Git learning resources
+
+::: columns
+
+::: {.column width="60%"}
+
+* [Pro Git Book](http://git-scm.com/book/en/v2)
+* [Software carpentry lesson](http://swcarpentry.github.io/git-novice/)
+* *\"oh sh\*\* git\"* - [zine](https://wizardzines.com/zines/oh-shit-git/), or [blog](https://ohshitgit.com/)
+* [The Turing Way](https://the-turing-way.netlify.app/reproducible-research/vcs.html)
+* [stack overflow](https://stackoverflow.com/) *etc.* - *use carefully* :warning:
+* blogs on [dev](https://dev.to/) or [atlassian](https://www.atlassian.com/git/tutorials) *etc.*
+
+::: {.callout-warning appearance="simple"}
+
+**Remember**
+
+Learning Git is a process.
+
+Everyone makes mistakes.
+
+:::
+
+
+:::
+
+::: {.column width="40%"}
+[![](assets/images/ohshitgit.png)](https://ohshitgit.com/)
+:::
+
+:::
+
+## Git {{< fa brands git-alt >}} vs GitHub {{< fa brands github >}} or GitLab {{< fa brands gitlab >}}
+
+<br>
+
+**Git**
+
+* Local client for source code management
+* Interacting with remote git servers
+
+**GitHub/GitLab**
+
+* Code hosting
+* Collaboration
+* OSS contribution
+* Project management
+* Automated workflows/continuous delivery
+
+
+## Repositories
+
+![](assets/images/talk_repo_screenshot.png)
+
+## Issues
+
+![](assets/images/github_issues_screenshot.png)
+
+## Projects/Kanban Board
+
+![](assets/images/github_projects_screenshot.png)
+
+
+# Testing
+
+##
+
+![](assets/images/post-office-scandal.png)
+
+From: [Private Eye](https://www.private-eye.co.uk/pictures/special_reports/justice-lost-in-the-post.pdf)
+
+
+## Levels of testing
+
+::: {.callout-note appearance="simple"}
+
+**Smoke Testing**
+Very brief initial checks that ensures the basic requirements required to run the project hold. If these fail there is no point proceeding to additional levels of testing until they are fixed.
+
+:::
+
+::: {.callout-note appearance="simple"}
+
+**Unit Testing** A level of the software testing process where individual units of a software are tested. The purpose is to validate that each unit of the software performs as designed.
+
+:::
+
+::: {.callout-note appearance="simple"}
+
+**Integration Testing** A level of software testing where individual units are combined and tested as a group. The purpose of this level of testing is to expose faults in the interaction between integrated units.
+
+:::
+
+::: {.callout-note appearance="simple"}
+
+**System Testing** A level of the software testing process where a complete, integrated system is tested. The purpose of this test is to evaluate whether the system as a whole gives the correct outputs for given inputs.
+
+:::
+
+::: {.callout-note appearance="simple"}
+
+**Acceptance Testing** A level of the software testing process where a system is tested for acceptability. The purpose of this test is to evaluate the system’s compliance with the project requirements and assess whether it is acceptable for the purpose.
+
+:::
+
+From: [The Turing Way](https://the-turing-way.netlify.app/reproducible-research/testing.html)
+
+
+## Test-driven development
+
+::: {.incremental}
+1. Write a test that fails
+2. Write code to make the test pass
+3. Refactor
+:::
+
+. . .
+
+
+##
+```{mermaid}
+%%| fig-height: 7
+flowchart TB
+    classDef writecode fill:#7D7ABC,stroke-width:0px;
+    classDef testspass fill:#23F0C7,stroke-width:0px;
+    classDef testsfail fill:#EF767A,stroke-width:0px;
+    subgraph id1 [<b>Code-driven development</b>]
+        A((1. write test)) --> B((2. test<br>passes/fails))
+        B-->|test passes|A
+        B-->|test fails|C((3. Write only<br>enough code))
+        C-->|test fails|C
+    end
+    subgraph id2 [<b>Refactoring</b>]
+        C-->|test passes|D((4. Check all tests))
+        D-->|tests pass|E((5. Refactor))
+        E-->D
+        D-->|Some tests fail|F((6. Update failing tests<br>Correct regressions))
+        F-->D
+    end
+    class A,C,E,F writecode;
+    class B testsfail;
+    class D testspass;
+```
+
+
+# Environment & Dependency Management
+
+
+## Great resources
+
+[![](assets/images/bes_reproducible_code.jpg)](https://www.britishecologicalsociety.org/wp-content/uploads/2019/06/BES-Guide-Reproducible-Code-2019.pdf)
+[![](assets/images/turing_way.jpg){width="40%"}](https://the-turing-way.netlify.app/)
+
+* [BES Guide to Reproducible Research Code](https://www.britishecologicalsociety.org/wp-content/uploads/2019/06/BES-Guide-Reproducible-Code-2019.pdf)
+* [The Turing Way](https://the-turing-way.netlify.app/)
+* [Software Sustainability Institute](https://software.ac.uk/)
+* [This talk!](https://github.com/davidwilby/ResearchSoftwareMethods)
+

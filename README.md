@@ -1,48 +1,23 @@
-# Slides for Research Software Engineering Methods Talk
+# Research Software Engineering Methods Talk
 
-![pdf](https://github.com/davidwilby/ResearchSoftwareMethods/actions/workflows/build_presentation_pdf.yml/badge.svg)
+## Using these slides
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
-## Building the slides
-### Depencencies
-#### LaTeX
-This talk is written in LaTeX, so to build the slides from source, you will need a LaTeX distribution. I've tested with `pdflatex` on Ubuntu 18.04. It should also build using other distributions and on other operating systems, but I have not tested this myself.
+## Rendering the slides locally
+These slides are produced using [Quarto](https://quarto.org).
 
-For Ubuntu, install the TexLive base:
-```sh
-sudo apt-get install texlive-latex-base
-```
+In order to render them locally, you will need to install Quarto from <https://quarto.org/docs/get-started/>.
 
-Optionally, install more fonts:
-```sh
-sudo apt-get install texlive-fonts-recommended
-sudo apt-get install texlive-fonts-extra
-```
+Quarto documents can be rendered in either:
+* VSCode
+* RStudio (> 2022.07.1+554)
+* Jupyter
+* Terminal
 
-And extra packages:
-```sh
-sudo apt-get install texlive-latex-extra
-```
+Full instructions can be found at the link above, however in brief:
+* In RStudio, open `index.qmd`, above the document click `Render`
+* In the terminal, run `quarto render`
 
-#### Beamer
-The `Beamer` documentclass is used for formatting a presentation in LaTeX, most distributions should support this.
-
-#### Slide theme - Metropolis
-Instructions for building the slide theme are here: https://github.com/matze/mtheme
-
-### Build Instructions
-#### Locally
-In the folder location where you would like to build the presentation pdf, run:
-```sh
-git clone https://github.com/davidwilby/ResearchSoftwareMethods
-cd ResearchSoftwareMethodsTalk
-pdflatex presentation.tex
-```
-This should build the presentation to `./presentation.pdf`
-
-#### Automated on GitHub
-Tagged commits are automatically built and associated with a release; the built pdf is attached to the release as an asset.
-You can see the workflow for doing this in [`.github/workflows/`](/.github/workflows)
-
-### Contributing
+## Contributing
 Contributions and improvements are very welcome! Please fork this repo and make a pull request against the `main` branch.
 Please ensure that your document compiles successfully with the instructions above.

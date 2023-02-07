@@ -1,24 +1,5 @@
-# https://github.com/github/gitignore/blob/master/TeX.gitignore
-# Core latex/pdflatex auxiliary files:
-*.aux
-*.lof
-*.log
-*.lot
-*.fls
-*.out
-*.toc
-*.fmt
-*.fot
-*.cb
-*.cb2
-.*.lb
-
-*.sty
-
-*.pdf
-*.nav
-*.snm
-presentation.fdb_latexmk
-presentation.listing
-presentation.synctex.gz
-presentation.vrb
+pages/*
+build/*
+/.quarto/
+*.html
+*_files/
