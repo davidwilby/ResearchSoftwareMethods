@@ -746,7 +746,7 @@ gitGraph
 <p>or</p>
 <div id="qrcode" class="qrcode"></div>
 <script type="text/javascript">
-var qrcode = new QRCode("qrcode", {"height":"350","colorDark":"#000000","colorLight":"#ffffff","width":"350","text":"https://onlywei.github.io/explain-git-with-d3"});
+var qrcode = new QRCode("qrcode", {"width":"350","colorDark":"#000000","text":"https://onlywei.github.io/explain-git-with-d3","height":"350","colorLight":"#ffffff"});
 </script>
     
 </section>
@@ -957,17 +957,17 @@ var qrcode = new QRCode("qrcode", {"height":"350","colorDark":"#000000","colorLi
     classDef writecode fill:#7D7ABC,stroke-width:0px;
     classDef testspass fill:#23F0C7,stroke-width:0px;
     classDef testsfail fill:#EF767A,stroke-width:0px;
-    subgraph id1 [code-driven development]
-        A((write test)) --&gt; B((test&lt;br&gt;passes/fails))
+    subgraph id1 [&lt;b&gt;Code-driven development&lt;/b&gt;]
+        A((1. write test)) --&gt; B((2. test&lt;br&gt;passes/fails))
         B--&gt;|test passes|A
-        B--&gt;|test fails|C((Write only&lt;br&gt;enough code))
+        B--&gt;|test fails|C((3. Write only&lt;br&gt;enough code))
         C--&gt;|test fails|C
     end
-    subgraph id2 [refactoring]
-        C--&gt;|test passes|D((Check all tests))
-        D--&gt;|tests pass|E((Refactor))
+    subgraph id2 [&lt;b&gt;Refactoring&lt;/b&gt;]
+        C--&gt;|test passes|D((4. Check all tests))
+        D--&gt;|tests pass|E((5. Refactor))
         E--&gt;D
-        D--&gt;|Some tests fail|F((Update failing tests&lt;br&gt;Correct regressions))
+        D--&gt;|Some tests fail|F((6. Update failing tests&lt;br&gt;Correct regressions))
         F--&gt;D
     end
     class A,C,E,F writecode;
