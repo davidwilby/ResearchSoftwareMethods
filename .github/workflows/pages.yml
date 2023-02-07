@@ -1,0 +1,33 @@
+name: build to github pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches: main
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v3
+
+      - name: Screenshot Repo
+        uses: swinton/screenshot-website@v1.x
+        with:
+          source: https://github.com/davidwilby/ResearchSoftwareMethods
+          destination: assets/images/talk_repo_screenshot.png
+      
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+      - run: |
+          mkdir build
+          quarto render presentation.qmd --output-dir build
+      
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: build # The folder the action should deploy.
+          clean: false

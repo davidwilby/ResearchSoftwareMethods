@@ -1,0 +1,29 @@
+// inherits from night theme
+
+/*-- scss:defaults --*/
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic);
+
+// fonts
+$font-family-sans-serif: "Open Sans", sans-serif !default;
+$presentation-font-size-root: 30px;
+$code-block-font-size: 0.8em;
+
+// colors
+$body-bg: #111 !default;
+$body-color: #fff !default;
+$link-color: #e7ad52 !default;
+$selection-bg: #e7ad52 !default;
+$input-panel-bg: rgba(233, 236, 239, 0.2) !default;
+
+// headings
+$presentation-heading-font: "Montserrat", Impact, sans-serif;
+$presentation-heading-letter-spacing: -0.03em;
+
+// code blocks
+$code-block-border-color: rgba(233, 236, 239, 0.5) !default;
+
+
+// alignment
+$presentation-title-slide-text-align: center;
