@@ -120,9 +120,13 @@ getting your head round it.
 
 ## What makes a version control system?
 
+<br>
+
 * :camera_flash: Snapshot current version
 * :label: Name specific versions
-* :leftwards_arrow_with_hook: Revert back to a version
+* :leftwards_arrow_with_hook: Revert back to a particular version
+
+<br>
 
 Perhaps
 
@@ -202,6 +206,15 @@ The most important concept in git is the `commit` - the name given to a unit of 
 
 :::
 
+<br>
+
+. . .
+
+### Commits contain *changes*
+
+Not actually *snapshots* of a file.
+
+But can recreate a state from a sequence of changes.
 
 ## Making a commit {{< fa solid code-commit >}}
 
@@ -370,9 +383,9 @@ or
 
 ::: {.callout-tip appearance="simple"}
 
-Once a directory/folder is *initialised* with `git` it becomes a *repository*.
+<font size="6">Once a directory/folder is *initialised* with `git` it becomes a *repository*.</font>
 
-<br>
+<br><br>
 
 :::
 
@@ -465,14 +478,16 @@ $ git status
 * [stack overflow](https://stackoverflow.com/) *etc.* - *use carefully* :warning:
 * blogs on [dev](https://dev.to/) or [atlassian](https://www.atlassian.com/git/tutorials) *etc.*
 
-::: {.callout-warning appearance="simple"}
+<br>
 
+::: {.callout-warning appearance="simple"}
+<font size="6">
 **Remember**
 
 Learning Git is a process.
 
 Everyone makes mistakes.
-
+</font>
 :::
 
 
@@ -596,8 +611,9 @@ flowchart TB
     class D testspass;
 ```
 
+## Continuous integration/Automated testing
 
-# Environment & Dependency Management
+![](assets/images/githubactions_screenshot.png)
 
 
 ## Great resources
