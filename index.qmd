@@ -480,6 +480,48 @@ Everyone makes mistakes.
 
 # Testing
 
+##
+
+![](assets/images/post-office-scandal.png)
+
+<font size="2">Credit: [Private
+Eye](https://www.private-eye.co.uk/pictures/special_reports/justice-lost-in-the-post.pdf)</font>
+
+
+## 
+### Testing can be split into different scales
+
+<br>
+
+::: {.callout-note}
+
+## Unit Testing
+
+Tests the smallest possible units of code, e.g. functions or class methods.
+
+:::
+
+<br>
+
+::: {.callout-note}
+
+## Integration Testing
+
+Test for errors when units function together.
+
+:::
+
+<br>
+
+::: {.callout-note}
+
+## Regression Testing
+
+Tests that new functionality doesn't break existing functionality.
+
+:::
+
+
 # Environment & Dependency Management
 
 
