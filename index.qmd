@@ -217,7 +217,7 @@ The most important concept in git is the `commit` - the name given to a unit of 
         C(fa:fa-plus <br><strong>Stage</strong><br>changes) --> D(fa:fa-check<br>Commit)
 ```
 
-## Aside: the commit hash
+## The commit hash
 
 <br>
 
@@ -246,6 +246,47 @@ But are most often seen as the first 7 characters, as this is easier to read/typ
 `d3dd03f`
 
 
+## The commit message
+
+Each commit has a *message* associated with it.
+
+<br>
+
+**Summary/Title**: <50-72 characters
+
+Displayed most frequently.
+
+<br>
+
+**Detailed description**: no character limit.
+
+*Can* be used to capture more detail. Not used that often.
+
+. . .
+
+<br>
+
+### This commit will...
+
+::: columns
+
+::: {.column width="30%"}
+
+* :x: some stuff
+* :x: code
+* :x: updates
+
+:::
+
+::: {.column width="70%"}
+
+* :heavy_check_mark: add new module "renderers"
+* :heavy_check_mark: update README with new install instructions
+* :heavy_check_mark: fix bug #17 with package update
+
+:::
+
+:::
 
 ## Branches  {{< fa solid code-branch >}}
 
@@ -274,7 +315,7 @@ git commit
 ```
 
 
-::: {.callout-note appearance="simple"}
+::: {.callout-tip appearance="simple"}
 
 **Checkout**: switching to a different branch.
 
@@ -331,7 +372,7 @@ or
 
 <br>
 
-::: {.callout-note appearance="simple"}
+::: {.callout-tip appearance="simple"}
 
 Once a directory/folder is *initialised* with `git` it becomes a *repository*.
 
@@ -488,38 +529,77 @@ Everyone makes mistakes.
 Eye](https://www.private-eye.co.uk/pictures/special_reports/justice-lost-in-the-post.pdf)</font>
 
 
-## 
-### Testing can be split into different scales
+## Levels of testing
 
-<br>
+::: {.callout-note appearance="simple"}
 
-::: {.callout-note}
-
-## Unit Testing
-
-Tests the smallest possible units of code, e.g. functions or class methods.
+**Smoke Testing**
+Very brief initial checks that ensures the basic requirements required to run the project hold. If these fail there is no point proceeding to additional levels of testing until they are fixed.
 
 :::
 
-<br>
+::: {.callout-note appearance="simple"}
 
-::: {.callout-note}
-
-## Integration Testing
-
-Test for errors when units function together.
+**Unit Testing** A level of the software testing process where individual units of a software are tested. The purpose is to validate that each unit of the software performs as designed.
 
 :::
 
-<br>
+::: {.callout-note appearance="simple"}
 
-::: {.callout-note}
-
-## Regression Testing
-
-Tests that new functionality doesn't break existing functionality.
+**Integration Testing** A level of software testing where individual units are combined and tested as a group. The purpose of this level of testing is to expose faults in the interaction between integrated units.
 
 :::
+
+::: {.callout-note appearance="simple"}
+
+**System Testing** A level of the software testing process where a complete, integrated system is tested. The purpose of this test is to evaluate whether the system as a whole gives the correct outputs for given inputs.
+
+:::
+
+::: {.callout-note appearance="simple"}
+
+**Acceptance Testing** A level of the software testing process where a system is tested for acceptability. The purpose of this test is to evaluate the system’s compliance with the project requirements and assess whether it is acceptable for the purpose.
+
+:::
+
+From: [The Turing Way](https://the-turing-way.netlify.app/reproducible-research/testing.html)
+
+
+## Test-driven development
+
+::: {.incremental}
+1. Write a test that fails
+2. Write code to make the test pass
+3. Refactor
+:::
+
+. . .
+
+
+##
+```{mermaid}
+%%| fig-height: 7
+flowchart TB
+    classDef writecode fill:#7D7ABC,stroke-width:0px;
+    classDef testspass fill:#23F0C7,stroke-width:0px;
+    classDef testsfail fill:#EF767A,stroke-width:0px;
+    subgraph id1 [<b>Code-driven development</b>]
+        A((1. write test)) --> B((2. test<br>passes/fails))
+        B-->|test passes|A
+        B-->|test fails|C((3. Write only<br>enough code))
+        C-->|test fails|C
+    end
+    subgraph id2 [<b>Refactoring</b>]
+        C-->|test passes|D((4. Check all tests))
+        D-->|tests pass|E((5. Refactor))
+        E-->D
+        D-->|Some tests fail|F((6. Update failing tests<br>Correct regressions))
+        F-->D
+    end
+    class A,C,E,F writecode;
+    class B testsfail;
+    class D testspass;
+```
 
 
 # Environment & Dependency Management
