@@ -503,11 +503,13 @@
 </section>
 <section id="what-makes-a-version-control-system" class="slide level2">
 <h2>What makes a version control system?</h2>
+<p><br></p>
 <ul>
 <li><span class="emoji" data-emoji="camera_flash">📸</span> Snapshot current version</li>
 <li><span class="emoji" data-emoji="label">🏷️</span> Name specific versions</li>
-<li><span class="emoji" data-emoji="leftwards_arrow_with_hook">↩︎️</span> Revert back to a version</li>
+<li><span class="emoji" data-emoji="leftwards_arrow_with_hook">↩︎️</span> Revert back to a particular version</li>
 </ul>
+<p><br></p>
 <p>Perhaps</p>
 <ul>
 <li><span class="emoji" data-emoji="books">📚</span> Compare and merge versions</li>
@@ -591,6 +593,12 @@ gitGraph
 <p>The most important concept in git is the <code>commit</code> - the name given to a unit of changes, and also to the process of making a commit.</p>
 </div>
 </div>
+</div>
+<p><br></p>
+<div class="fragment">
+<h3 id="commits-contain-changes">Commits contain <em>changes</em></h3>
+<p>Not actually <em>snapshots</em> of a file.</p>
+<p>But can recreate a state from a sequence of changes.</p>
 </div>
 </section>
 <section id="making-a-commit-fa-solid-code-commit" class="slide level2">
@@ -747,7 +755,7 @@ gitGraph
 <p>or</p>
 <div id="qrcode" class="qrcode"></div>
 <script type="text/javascript">
-var qrcode = new QRCode("qrcode", {"colorDark":"#000000","height":"350","text":"https://onlywei.github.io/explain-git-with-d3","colorLight":"#ffffff","width":"350"});
+var qrcode = new QRCode("qrcode", {"width":"350","colorDark":"#000000","colorLight":"#ffffff","text":"https://onlywei.github.io/explain-git-with-d3","height":"350"});
 </script>
     
 </section>
@@ -760,8 +768,8 @@ var qrcode = new QRCode("qrcode", {"colorDark":"#000000","height":"350","text":"
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>Once a directory/folder is <em>initialised</em> with <code>git</code> it becomes a <em>repository</em>.</p>
-<p><br></p>
+<p><font size="6">Once a directory/folder is <em>initialised</em> with <code>git</code> it becomes a <em>repository</em>.</font></p>
+<p><br><br></p>
 </div>
 </div>
 </div>
@@ -824,15 +832,16 @@ var qrcode = new QRCode("qrcode", {"colorDark":"#000000","height":"350","text":"
 <li><a href="https://stackoverflow.com/">stack overflow</a> <em>etc.</em> - <em>use carefully</em> <span class="emoji" data-emoji="warning">⚠️</span></li>
 <li>blogs on <a href="https://dev.to/">dev</a> or <a href="https://www.atlassian.com/git/tutorials">atlassian</a> <em>etc.</em></li>
 </ul>
+<p><br></p>
 <div class="callout callout-warning callout-style-simple">
 <div class="callout-body">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p><strong>Remember</strong></p>
+<p><font size="6"> <strong>Remember</strong></font></p><font size="6">
 <p>Learning Git is a process.</p>
-<p>Everyone makes mistakes.</p>
+</font><p><font size="6">Everyone makes mistakes. </font></p>
 </div>
 </div>
 </div>
@@ -982,12 +991,11 @@ var qrcode = new QRCode("qrcode", {"colorDark":"#000000","height":"350","text":"
 </div>
 </div>
 </div>
-</section></section>
-<section>
-<section id="environment-dependency-management" class="title-slide slide level1 center">
-<h1>Environment &amp; Dependency Management</h1>
-
 </section>
+<section id="continuous-integrationautomated-testing" class="slide level2">
+<h2>Continuous integration/Automated testing</h2>
+
+<img data-src="assets/images/githubactions_screenshot.png" class="r-stretch"></section>
 <section id="great-resources" class="slide level2">
 <h2>Great resources</h2>
 <p><a href="https://www.britishecologicalsociety.org/wp-content/uploads/2019/06/BES-Guide-Reproducible-Code-2019.pdf"><img data-src="assets/images/bes_reproducible_code.jpg"></a> <a href="https://the-turing-way.netlify.app/"><img data-src="assets/images/turing_way.jpg" style="width:40.0%"></a></p>
