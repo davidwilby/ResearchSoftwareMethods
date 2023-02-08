@@ -81,7 +81,7 @@ Go to [menti.com](https://menti.com) and enter the code **8145 3365**
 
 ##
 
-[![](assets/images/talk_repo_screenshot.png)](https://github.com/davidwilby/ResearchSoftwareMethods){width="80%"}
+[![](assets/images/talk_repo_screenshot.png)](https://github.com/davidwilby/ResearchSoftwareMethods){fig-align="center"}
 
 <https://github.com/davidwilby/ResearchSoftwareMethods>
 
@@ -94,19 +94,19 @@ Can't I just write some code?
 
 ##
 
-![](assets/images/ioannidis.png)
+![](assets/images/ioannidis.png){fig-align="center"}
 
 [Wikipedia: Replication Crisis](https://en.wikipedia.org/wiki/Replication_crisis)
 
 ##
 
-![](assets/images/repro_articles.png)
+![](assets/images/repro_articles.png){fig-align="center"}
 
 Credit: [Anna Krystalli](https://annakrystalli.me/rrresearchACCE20/slides/01_intro.html)
 
 ##
 
-![](assets/images/post-office-scandal.png)
+![](assets/images/post-office-scandal.png){fig-align="center"}
 
 Credit: [Private Eye](https://www.private-eye.co.uk/pictures/special_reports/justice-lost-in-the-post.pdf)
 
@@ -534,7 +534,7 @@ Everyone makes mistakes.
 
 ##
 
-![](assets/images/post-office-scandal.png)
+![](assets/images/post-office-scandal.png){fig-align="center"}
 
 From: [Private Eye](https://www.private-eye.co.uk/pictures/special_reports/justice-lost-in-the-post.pdf)
 
@@ -613,7 +613,7 @@ flowchart TB
 
 ## Continuous integration/Automated testing
 
-![](assets/images/githubactions_screenshot.png)
+![](assets/images/githubactions_screenshot.png){fig-align="center"}
 
 
 ## Great resources
