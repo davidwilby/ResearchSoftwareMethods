@@ -616,6 +616,54 @@ flowchart TB
 ![](assets/images/githubactions_screenshot.png){fig-align="center"}
 
 
+# Environment & Dependency Management
+
+## Python :snake:
+
+<br>
+
+```{mermaid}
+%%| fig-width: 9
+flowchart TB
+    subgraph Project 3
+        A[fab:fa-python Python 3.10]
+        A-->B[numpy 1.24.0]
+        A-->C[Django 4.0]
+        A-->D[TensorFlow 2.11]
+    end
+    subgraph Project 2
+        E[fab:fa-python Python 3.8]
+        E-->F[numpy 1.1.0]
+        E-->G[matplotlib 3.1]
+    end
+    subgraph Project 1
+        H[fab:fa-python Python 3.10]
+        H-->I[numpy 1.1.0]
+        H-->J[matplotlib 3.1]
+    end
+    K[fab:fa-python System Python]
+```
+
+. . .
+
+<br>
+
+`pip freeze`
+
+```
+numpy==1.1.0
+matplotlib>3
+```
+`requirements.txt`
+<br>
+
+::: {.callout-note appearance="simple"}
+
+**Tools**: [`venv`](https://docs.python.org/3/library/venv.html) / [`pipenv`](https://pipenv.pypa.io/en/latest/) / [`conda`](https://docs.conda.io/en/latest/) / [`poetry`](https://python-poetry.org/)
+
+:::
+
+
 ## Great resources
 
 [![](assets/images/bes_reproducible_code.jpg)](https://www.britishecologicalsociety.org/wp-content/uploads/2019/06/BES-Guide-Reproducible-Code-2019.pdf)
