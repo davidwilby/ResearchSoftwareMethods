@@ -221,9 +221,9 @@ But can recreate a state from a sequence of changes.
 ```{mermaid}
 %%| fig-height: 6
     flowchart TB
-        A(fa:fa-pen fa:fa-file-code<br>Edit file) --> B
-        B(fa:fa-download<br>Save) --> C
-        C(fa:fa-plus <br><strong>Stage</strong><br>changes) --> D(fa:fa-check<br>Commit)
+        A(fa:fa-pen fa:fa-file-code Edit file) --> B
+        B(fa:fa-download Save) --> C
+        C(fa:fa-plus <strong>Stage</strong> changes) --> D(fa:fa-check Commit)
 ```
 
 ## The commit hash
