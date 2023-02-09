@@ -73,11 +73,18 @@ Go to [menti.com](https://menti.com) and enter the code **8145 3365**
 
 ## Outline
 
-* Why do we need good practice?
-* Git
-* GitHub
-* Testing
-* Environment & Dependency Management
+<br>
+
+* Why do we need good practice? {{< fa solid magnifying-glass >}}
+
+* Testing {{< fa solid flask >}}
+
+* Environment & Dependency Management {{< fa solid seedling >}}
+
+* Git {{< fa brands git-alt >}}
+
+* GitHub {{< fa brands github-alt >}}
+
 
 ##
 
@@ -109,6 +116,154 @@ Credit: [Anna Krystalli](https://annakrystalli.me/rrresearchACCE20/slides/01_int
 ![](assets/images/post-office-scandal.png){fig-align="center"}
 
 Credit: [Private Eye](https://www.private-eye.co.uk/pictures/special_reports/justice-lost-in-the-post.pdf)
+
+
+# Testing
+
+## Levels of testing
+
+. . .
+
+::: {.callout-note appearance="minimal"}
+
+**Smoke Testing**: 
+*Very* brief initial checks that ensures the basic requirements required to run the project hold. If these fail there is no point proceeding to additional levels of testing until they are fixed.
+
+:::
+
+. . .
+
+::: {.callout-warning appearance="minimal"}
+
+**Unit Testing**:
+*Individual units* of a codebase are tested, e.g. functions or methods. The purpose is to validate that each unit of the software performs as designed.
+
+:::
+
+. . .
+
+::: {.callout-important appearance="minimal"}
+
+**Integration Testing**:
+Individual units are combined and tested as a *group*. The purpose of this level of testing is to expose faults in the interaction between integrated units.
+
+:::
+
+. . .
+
+::: {.callout-tip appearance="minimal"}
+
+**System Testing**:
+A complete, integrated system is tested. The purpose of this test is to evaluate whether the *system as a whole* gives the correct outputs for given inputs.
+
+:::
+
+. . .
+
+::: {.callout-caution appearance="minimal"}
+
+**Acceptance Testing**:
+Evaluate the system’s compliance with the project requirements and assess whether it is acceptable for the purpose.
+
+:::
+
+<font size="3">From: [The Turing Way](https://the-turing-way.netlify.app/reproducible-research/testing.html)</font>
+
+
+## Test-driven development
+
+<br>
+
+. . .
+
+(@) Write a test that fails
+
+<br>
+
+. . .
+
+(@) Write code to make the test pass
+
+<br>
+
+. . .
+
+(@) Refactor
+
+. . .
+
+
+##
+```{mermaid}
+%%| fig-height: 7
+flowchart TB
+    classDef writecode fill:#7D7ABC,stroke-width:0px;
+    classDef testspass fill:#23F0C7,stroke-width:0px;
+    classDef testsfail fill:#EF767A,stroke-width:0px;
+    subgraph id1 [<b>Code-driven development</b>]
+        A((1. write test)) --> B((2. test<br>passes/fails))
+        B-->|test passes|A
+        B-->|test fails|C((3. Write only<br>enough code))
+        C-->|test fails|C
+    end
+    subgraph id2 [<b>Refactoring</b>]
+        C-->|test passes|D((4. Check all tests))
+        D-->|tests pass|E((5. Refactor))
+        E-->D
+        D-->|Some tests fail|F((6. Update failing tests<br>Correct regressions))
+        F-->D
+    end
+    class A,C,E,F writecode;
+    class B testsfail;
+    class D testspass;
+```
+
+# Environment & Dependency Management
+
+## Python :snake:
+
+<br>
+
+```{mermaid}
+%%| fig-width: 9
+flowchart TB
+    subgraph Project 3
+        A[fab:fa-python Python 3.10]
+        A-->B[numpy 1.24.0]
+        A-->C[Django 4.0]
+        A-->D[TensorFlow 2.11]
+    end
+    subgraph Project 2
+        E[fab:fa-python Python 3.8]
+        E-->F[numpy 1.1.0]
+        E-->G[matplotlib 3.1]
+    end
+    subgraph Project 1
+        H[fab:fa-python Python 3.10]
+        H-->I[numpy 1.1.0]
+        H-->J[matplotlib 3.1]
+    end
+    K[fab:fa-python System Python]
+```
+
+. . .
+
+<br>
+
+`pip freeze`
+
+```
+numpy==1.1.0
+matplotlib>3
+```
+`requirements.txt`
+<br>
+
+::: {.callout-note appearance="simple"}
+
+**Tools**: [`venv`](https://docs.python.org/3/library/venv.html) / [`pipenv`](https://pipenv.pypa.io/en/latest/) / [`conda`](https://docs.conda.io/en/latest/) / [`poetry`](https://python-poetry.org/)
+
+:::
 
 
 # Control yourself
@@ -525,162 +680,9 @@ Everyone makes mistakes.
 ![](assets/images/github_projects_screenshot.png)
 
 
-# Testing
-
-##
-
-![](assets/images/post-office-scandal.png){fig-align="center"}
-
-From: [Private Eye](https://www.private-eye.co.uk/pictures/special_reports/justice-lost-in-the-post.pdf)
-
-
-## Levels of testing
-
-::: {.callout-note appearance="minimal"}
-
-**Smoke Testing**: 
-*Very* brief initial checks that ensures the basic requirements required to run the project hold. If these fail there is no point proceeding to additional levels of testing until they are fixed.
-
-:::
-
-. . .
-
-::: {.callout-warning appearance="minimal"}
-
-**Unit Testing**:
-*Individual units* of a codebase are tested, e.g. functions or methods. The purpose is to validate that each unit of the software performs as designed.
-
-:::
-
-. . .
-
-::: {.callout-important appearance="minimal"}
-
-**Integration Testing**:
-Individual units are combined and tested as a *group*. The purpose of this level of testing is to expose faults in the interaction between integrated units.
-
-:::
-
-. . .
-
-::: {.callout-tip appearance="minimal"}
-
-**System Testing**:
-A complete, integrated system is tested. The purpose of this test is to evaluate whether the *system as a whole* gives the correct outputs for given inputs.
-
-:::
-
-. . .
-
-::: {.callout-caution appearance="minimal"}
-
-**Acceptance Testing**:
-Evaluate the system’s compliance with the project requirements and assess whether it is acceptable for the purpose.
-
-:::
-
-<font size="3">From: [The Turing Way](https://the-turing-way.netlify.app/reproducible-research/testing.html)</font>
-
-
-## Test-driven development
-
-<br>
-
-. . .
-
-(@) Write a test that fails
-
-<br>
-
-. . .
-
-(@) Write code to make the test pass
-
-<br>
-
-. . .
-
-(@) Refactor
-
-. . .
-
-
-##
-```{mermaid}
-%%| fig-height: 7
-flowchart TB
-    classDef writecode fill:#7D7ABC,stroke-width:0px;
-    classDef testspass fill:#23F0C7,stroke-width:0px;
-    classDef testsfail fill:#EF767A,stroke-width:0px;
-    subgraph id1 [<b>Code-driven development</b>]
-        A((1. write test)) --> B((2. test<br>passes/fails))
-        B-->|test passes|A
-        B-->|test fails|C((3. Write only<br>enough code))
-        C-->|test fails|C
-    end
-    subgraph id2 [<b>Refactoring</b>]
-        C-->|test passes|D((4. Check all tests))
-        D-->|tests pass|E((5. Refactor))
-        E-->D
-        D-->|Some tests fail|F((6. Update failing tests<br>Correct regressions))
-        F-->D
-    end
-    class A,C,E,F writecode;
-    class B testsfail;
-    class D testspass;
-```
-
 ## Continuous integration/Automated testing
 
 ![](assets/images/githubactions_screenshot.png){fig-align="center"}
-
-
-# Environment & Dependency Management
-
-## Python :snake:
-
-<br>
-
-```{mermaid}
-%%| fig-width: 9
-flowchart TB
-    subgraph Project 3
-        A[fab:fa-python Python 3.10]
-        A-->B[numpy 1.24.0]
-        A-->C[Django 4.0]
-        A-->D[TensorFlow 2.11]
-    end
-    subgraph Project 2
-        E[fab:fa-python Python 3.8]
-        E-->F[numpy 1.1.0]
-        E-->G[matplotlib 3.1]
-    end
-    subgraph Project 1
-        H[fab:fa-python Python 3.10]
-        H-->I[numpy 1.1.0]
-        H-->J[matplotlib 3.1]
-    end
-    K[fab:fa-python System Python]
-```
-
-. . .
-
-<br>
-
-`pip freeze`
-
-```
-numpy==1.1.0
-matplotlib>3
-```
-`requirements.txt`
-<br>
-
-::: {.callout-note appearance="simple"}
-
-**Tools**: [`venv`](https://docs.python.org/3/library/venv.html) / [`pipenv`](https://pipenv.pypa.io/en/latest/) / [`conda`](https://docs.conda.io/en/latest/) / [`poetry`](https://python-poetry.org/)
-
-:::
 
 
 ## Great resources
