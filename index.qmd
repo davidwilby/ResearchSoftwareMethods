@@ -301,8 +301,6 @@ Displayed most frequently.
 
 Used to work on new features/changes/additions to the code.
 
-<br>
-
 ```{mermaid}
 %%| fig-width: 10
 %%{init: { 'logLevel': 'debug', 'theme': 'base'} }%%
@@ -322,7 +320,6 @@ git commit
 git commit
 git commit
 ```
-
 
 ::: {.callout-tip appearance="simple"}
 
@@ -362,8 +359,6 @@ git commit
 
 
 ## Demo
-
-<br>
 
 <https://onlywei.github.io/explain-git-with-d3>
 
@@ -541,47 +536,71 @@ From: [Private Eye](https://www.private-eye.co.uk/pictures/special_reports/justi
 
 ## Levels of testing
 
-::: {.callout-note appearance="simple"}
+::: {.callout-note appearance="minimal"}
 
-**Smoke Testing**
-Very brief initial checks that ensures the basic requirements required to run the project hold. If these fail there is no point proceeding to additional levels of testing until they are fixed.
-
-:::
-
-::: {.callout-note appearance="simple"}
-
-**Unit Testing** A level of the software testing process where individual units of a software are tested. The purpose is to validate that each unit of the software performs as designed.
+**Smoke Testing**: 
+*Very* brief initial checks that ensures the basic requirements required to run the project hold. If these fail there is no point proceeding to additional levels of testing until they are fixed.
 
 :::
 
-::: {.callout-note appearance="simple"}
+. . .
 
-**Integration Testing** A level of software testing where individual units are combined and tested as a group. The purpose of this level of testing is to expose faults in the interaction between integrated units.
+::: {.callout-warning appearance="minimal"}
 
-:::
-
-::: {.callout-note appearance="simple"}
-
-**System Testing** A level of the software testing process where a complete, integrated system is tested. The purpose of this test is to evaluate whether the system as a whole gives the correct outputs for given inputs.
+**Unit Testing**:
+*Individual units* of a codebase are tested, e.g. functions or methods. The purpose is to validate that each unit of the software performs as designed.
 
 :::
 
-::: {.callout-note appearance="simple"}
+. . .
 
-**Acceptance Testing** A level of the software testing process where a system is tested for acceptability. The purpose of this test is to evaluate the system’s compliance with the project requirements and assess whether it is acceptable for the purpose.
+::: {.callout-important appearance="minimal"}
+
+**Integration Testing**:
+Individual units are combined and tested as a *group*. The purpose of this level of testing is to expose faults in the interaction between integrated units.
 
 :::
 
-From: [The Turing Way](https://the-turing-way.netlify.app/reproducible-research/testing.html)
+. . .
+
+::: {.callout-tip appearance="minimal"}
+
+**System Testing**:
+A complete, integrated system is tested. The purpose of this test is to evaluate whether the *system as a whole* gives the correct outputs for given inputs.
+
+:::
+
+. . .
+
+::: {.callout-caution appearance="minimal"}
+
+**Acceptance Testing**:
+Evaluate the system’s compliance with the project requirements and assess whether it is acceptable for the purpose.
+
+:::
+
+<font size="3">From: [The Turing Way](https://the-turing-way.netlify.app/reproducible-research/testing.html)</font>
 
 
 ## Test-driven development
 
-::: {.incremental}
-1. Write a test that fails
-2. Write code to make the test pass
-3. Refactor
-:::
+<br>
+
+. . .
+
+(@) Write a test that fails
+
+<br>
+
+. . .
+
+(@) Write code to make the test pass
+
+<br>
+
+. . .
+
+(@) Refactor
 
 . . .
 
