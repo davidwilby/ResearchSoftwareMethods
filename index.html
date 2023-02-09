@@ -460,12 +460,13 @@
 </section>
 <section id="outline" class="slide level2">
 <h2>Outline</h2>
+<p><br></p>
 <ul>
-<li>Why do we need good practice?</li>
-<li>Git</li>
-<li>GitHub</li>
-<li>Testing</li>
-<li>Environment &amp; Dependency Management</li>
+<li><p>Why do we need good practice? <i class="fa-solid fa-magnifying-glass" aria-label="magnifying-glass"></i></p></li>
+<li><p>Testing <i class="fa-solid fa-flask" aria-label="flask"></i></p></li>
+<li><p>Environment &amp; Dependency Management <i class="fa-solid fa-seedling" aria-label="seedling"></i></p></li>
+<li><p>Git <i class="fa-brands fa-git-alt" aria-label="git-alt"></i></p></li>
+<li><p>GitHub <i class="fa-brands fa-github-alt" aria-label="github-alt"></i></p></li>
 </ul>
 </section>
 <section id="section" class="slide level2">
@@ -492,6 +493,172 @@
 <h2></h2>
 
 <img data-src="assets/images/post-office-scandal.png" class="r-stretch quarto-figure-center"><p>Credit: <a href="https://www.private-eye.co.uk/pictures/special_reports/justice-lost-in-the-post.pdf">Private Eye</a></p>
+</section></section>
+<section>
+<section id="testing" class="title-slide slide level1 center">
+<h1>Testing</h1>
+
+</section>
+<section id="levels-of-testing" class="slide level2">
+<h2>Levels of testing</h2>
+<div class="fragment">
+<div class="callout callout-note no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<p><strong>Smoke Testing</strong>: <em>Very</em> brief initial checks that ensures the basic requirements required to run the project hold. If these fail there is no point proceeding to additional levels of testing until they are fixed.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-warning no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<p><strong>Unit Testing</strong>: <em>Individual units</em> of a codebase are tested, e.g.&nbsp;functions or methods. The purpose is to validate that each unit of the software performs as designed.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-important no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<p><strong>Integration Testing</strong>: Individual units are combined and tested as a <em>group</em>. The purpose of this level of testing is to expose faults in the interaction between integrated units.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-tip no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<p><strong>System Testing</strong>: A complete, integrated system is tested. The purpose of this test is to evaluate whether the <em>system as a whole</em> gives the correct outputs for given inputs.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-caution no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<p><strong>Acceptance Testing</strong>: Evaluate the system’s compliance with the project requirements and assess whether it is acceptable for the purpose.</p>
+</div>
+</div>
+</div>
+<p><font size="3">From: <a href="https://the-turing-way.netlify.app/reproducible-research/testing.html">The Turing Way</a></font></p>
+</div>
+</section>
+<section id="test-driven-development" class="slide level2">
+<h2>Test-driven development</h2>
+<p><br></p>
+<div class="fragment">
+<ol class="example" type="1">
+<li>Write a test that fails</li>
+</ol>
+<p><br></p>
+</div>
+<div class="fragment">
+<ol start="2" class="example" type="1">
+<li>Write code to make the test pass</li>
+</ol>
+<p><br></p>
+</div>
+<div class="fragment">
+<ol start="3" class="example" type="1">
+<li>Refactor</li>
+</ol>
+</div>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<div class="cell" data-reveal="true" data-fig-height="7">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">flowchart TB
+    classDef writecode fill:#7D7ABC,stroke-width:0px;
+    classDef testspass fill:#23F0C7,stroke-width:0px;
+    classDef testsfail fill:#EF767A,stroke-width:0px;
+    subgraph id1 [&lt;b&gt;Code-driven development&lt;/b&gt;]
+        A((1. write test)) --&gt; B((2. test&lt;br&gt;passes/fails))
+        B--&gt;|test passes|A
+        B--&gt;|test fails|C((3. Write only&lt;br&gt;enough code))
+        C--&gt;|test fails|C
+    end
+    subgraph id2 [&lt;b&gt;Refactoring&lt;/b&gt;]
+        C--&gt;|test passes|D((4. Check all tests))
+        D--&gt;|tests pass|E((5. Refactor))
+        E--&gt;D
+        D--&gt;|Some tests fail|F((6. Update failing tests&lt;br&gt;Correct regressions))
+        F--&gt;D
+    end
+    class A,C,E,F writecode;
+    class B testsfail;
+    class D testspass;
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="environment-dependency-management" class="title-slide slide level1 center">
+<h1>Environment &amp; Dependency Management</h1>
+
+</section>
+<section id="python" class="slide level2">
+<h2>Python <span class="emoji" data-emoji="snake">🐍</span></h2>
+<p><br></p>
+<div class="cell" data-reveal="true" data-fig-width="9">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-2">flowchart TB
+    subgraph Project 3
+        A[fab:fa-python Python 3.10]
+        A--&gt;B[numpy 1.24.0]
+        A--&gt;C[Django 4.0]
+        A--&gt;D[TensorFlow 2.11]
+    end
+    subgraph Project 2
+        E[fab:fa-python Python 3.8]
+        E--&gt;F[numpy 1.1.0]
+        E--&gt;G[matplotlib 3.1]
+    end
+    subgraph Project 1
+        H[fab:fa-python Python 3.10]
+        H--&gt;I[numpy 1.1.0]
+        H--&gt;J[matplotlib 3.1]
+    end
+    K[fab:fa-python System Python]
+</pre>
+<div id="mermaid-tooltip-2" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><br></p>
+<p><code>pip freeze</code></p>
+<pre><code>numpy==1.1.0
+matplotlib&gt;3</code></pre>
+<p><code>requirements.txt</code> <br></p>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p><strong>Tools</strong>: <a href="https://docs.python.org/3/library/venv.html"><code>venv</code></a> / <a href="https://pipenv.pypa.io/en/latest/"><code>pipenv</code></a> / <a href="https://docs.conda.io/en/latest/"><code>conda</code></a> / <a href="https://python-poetry.org/"><code>poetry</code></a></p>
+</div>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="control-yourself" class="title-slide slide level1 center">
@@ -566,7 +733,7 @@
 <div class="cell-output-display">
 <div>
 <p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">%%{init: { 'logLevel': 'debug', 'theme': 'base', 'gitGraph': {'showCommitLabel': true, 'rotateCommitLabel': true}} }%%
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-3">%%{init: { 'logLevel': 'debug', 'theme': 'base', 'gitGraph': {'showCommitLabel': true, 'rotateCommitLabel': true}} }%%
 gitGraph
     commit id: "commit 1"
     commit id: "commit 2"
@@ -576,7 +743,7 @@ gitGraph
     commit id: "commit 6"
     commit id: "commit 7"
 </pre>
-<div id="mermaid-tooltip-1" class="mermaidTooltip">
+<div id="mermaid-tooltip-3" class="mermaidTooltip">
 
 </div>
 <p></p>
@@ -606,12 +773,12 @@ gitGraph
 <div class="cell-output-display">
 <div>
 <p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-2">    flowchart TB
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-4">    flowchart TB
         A(fa:fa-pen fa:fa-file-code Edit file) --&gt; B
         B(fa:fa-download Save) --&gt; C
         C(fa:fa-plus &lt;strong&gt;Stage&lt;/strong&gt; changes) --&gt; D(fa:fa-check Commit)
 </pre>
-<div id="mermaid-tooltip-2" class="mermaidTooltip">
+<div id="mermaid-tooltip-4" class="mermaidTooltip">
 
 </div>
 <p></p>
@@ -676,12 +843,11 @@ gitGraph
 <section id="branches-fa-solid-code-branch" class="slide level2">
 <h2>Branches <i class="fa-solid fa-code-branch" aria-label="code-branch"></i></h2>
 <p>Used to work on new features/changes/additions to the code.</p>
-<p><br></p>
 <div class="cell" data-reveal="true" data-fig-width="10">
 <div class="cell-output-display">
 <div>
 <p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-3">%%{init: { 'logLevel': 'debug', 'theme': 'base'} }%%
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-5">%%{init: { 'logLevel': 'debug', 'theme': 'base'} }%%
 gitGraph
     commit id:"8bc2520"
     commit id:"2a70480"
@@ -690,18 +856,18 @@ gitGraph
     commit id:"bec84f4"
     commit id:"2420edd"
 </pre>
-<div id="mermaid-tooltip-3" class="mermaidTooltip">
+<div id="mermaid-tooltip-5" class="mermaidTooltip">
 
 </div>
 <p></p>
 </div>
 </div>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch experiment</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout experiment</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch experiment</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout experiment</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-tip callout-style-simple">
 <div class="callout-body">
 <div class="callout-icon-container">
@@ -722,7 +888,7 @@ gitGraph
 <div class="cell-output-display">
 <div>
 <p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-4">%%{init: { 'logLevel': 'debug', 'theme': 'base'} }%%
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-6">%%{init: { 'logLevel': 'debug', 'theme': 'base'} }%%
 gitGraph
     commit id:"8bc2520"
     commit id:"2a70480"
@@ -734,27 +900,26 @@ gitGraph
     merge experiment
     commit id:"60489ec"
 </pre>
-<div id="mermaid-tooltip-4" class="mermaidTooltip">
+<div id="mermaid-tooltip-6" class="mermaidTooltip">
 
 </div>
 <p></p>
 </div>
 </div>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge experiment</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge experiment</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="demo" class="slide level2">
 <h2>Demo</h2>
-<p><br></p>
 <p><a href="https://onlywei.github.io/explain-git-with-d3" class="uri">https://onlywei.github.io/explain-git-with-d3</a></p>
 <p>or</p>
 <p><a href="https://bit.ly/git-sandbox" class="uri">https://bit.ly/git-sandbox</a></p>
 <p>or</p>
 <div id="qrcode" class="qrcode"></div>
 <script type="text/javascript">
-var qrcode = new QRCode("qrcode", {"colorDark":"#000000","text":"https://onlywei.github.io/explain-git-with-d3","colorLight":"#ffffff","width":"350","height":"350"});
+var qrcode = new QRCode("qrcode", {"colorLight":"#ffffff","colorDark":"#000000","width":"350","text":"https://onlywei.github.io/explain-git-with-d3","height":"350"});
 </script>
     
 </section>
@@ -796,9 +961,9 @@ var qrcode = new QRCode("qrcode", {"colorDark":"#000000","text":"https://onlywei
 <p><br></p>
 <h3 id="command-line-git-fa-brands-git-alt">command line <code>git</code> <i class="fa-brands fa-git-alt" aria-label="git-alt"></i></h3>
 <p>via unix shell (or gitbash/WSL on Windows)</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git add README.md</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'initial commit'</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git add README.md</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'initial commit'</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -881,176 +1046,11 @@ var qrcode = new QRCode("qrcode", {"colorDark":"#000000","text":"https://onlywei
 <section id="projectskanban-board" class="slide level2">
 <h2>Projects/Kanban Board</h2>
 
-<img data-src="assets/images/github_projects_screenshot.png" class="r-stretch"></section></section>
-<section>
-<section id="testing" class="title-slide slide level1 center">
-<h1>Testing</h1>
-
-</section>
-<section id="section-4" class="slide level2">
-<h2></h2>
-
-<img data-src="assets/images/post-office-scandal.png" class="r-stretch quarto-figure-center"><p>From: <a href="https://www.private-eye.co.uk/pictures/special_reports/justice-lost-in-the-post.pdf">Private Eye</a></p>
-</section>
-<section id="levels-of-testing" class="slide level2">
-<h2>Levels of testing</h2>
-<div class="callout callout-note callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p><strong>Smoke Testing</strong> Very brief initial checks that ensures the basic requirements required to run the project hold. If these fail there is no point proceeding to additional levels of testing until they are fixed.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-note callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p><strong>Unit Testing</strong> A level of the software testing process where individual units of a software are tested. The purpose is to validate that each unit of the software performs as designed.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-note callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p><strong>Integration Testing</strong> A level of software testing where individual units are combined and tested as a group. The purpose of this level of testing is to expose faults in the interaction between integrated units.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-note callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p><strong>System Testing</strong> A level of the software testing process where a complete, integrated system is tested. The purpose of this test is to evaluate whether the system as a whole gives the correct outputs for given inputs.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-note callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p><strong>Acceptance Testing</strong> A level of the software testing process where a system is tested for acceptability. The purpose of this test is to evaluate the system’s compliance with the project requirements and assess whether it is acceptable for the purpose.</p>
-</div>
-</div>
-</div>
-<p>From: <a href="https://the-turing-way.netlify.app/reproducible-research/testing.html">The Turing Way</a></p>
-</section>
-<section id="test-driven-development" class="slide level2">
-<h2>Test-driven development</h2>
-<div>
-<ol type="1">
-<li class="fragment">Write a test that fails</li>
-<li class="fragment">Write code to make the test pass</li>
-<li class="fragment">Refactor</li>
-</ol>
-</div>
-</section>
-<section id="section-5" class="slide level2">
-<h2></h2>
-<div class="cell" data-reveal="true" data-fig-height="7">
-<div class="cell-output-display">
-<div>
-<p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-5">flowchart TB
-    classDef writecode fill:#7D7ABC,stroke-width:0px;
-    classDef testspass fill:#23F0C7,stroke-width:0px;
-    classDef testsfail fill:#EF767A,stroke-width:0px;
-    subgraph id1 [&lt;b&gt;Code-driven development&lt;/b&gt;]
-        A((1. write test)) --&gt; B((2. test&lt;br&gt;passes/fails))
-        B--&gt;|test passes|A
-        B--&gt;|test fails|C((3. Write only&lt;br&gt;enough code))
-        C--&gt;|test fails|C
-    end
-    subgraph id2 [&lt;b&gt;Refactoring&lt;/b&gt;]
-        C--&gt;|test passes|D((4. Check all tests))
-        D--&gt;|tests pass|E((5. Refactor))
-        E--&gt;D
-        D--&gt;|Some tests fail|F((6. Update failing tests&lt;br&gt;Correct regressions))
-        F--&gt;D
-    end
-    class A,C,E,F writecode;
-    class B testsfail;
-    class D testspass;
-</pre>
-<div id="mermaid-tooltip-5" class="mermaidTooltip">
-
-</div>
-<p></p>
-</div>
-</div>
-</div>
-</section>
+<img data-src="assets/images/github_projects_screenshot.png" class="r-stretch"></section>
 <section id="continuous-integrationautomated-testing" class="slide level2">
 <h2>Continuous integration/Automated testing</h2>
 
-<img data-src="assets/images/githubactions_screenshot.png" class="r-stretch quarto-figure-center"></section></section>
-<section>
-<section id="environment-dependency-management" class="title-slide slide level1 center">
-<h1>Environment &amp; Dependency Management</h1>
-
-</section>
-<section id="python" class="slide level2">
-<h2>Python <span class="emoji" data-emoji="snake">🐍</span></h2>
-<p><br></p>
-<div class="cell" data-reveal="true" data-fig-width="9">
-<div class="cell-output-display">
-<div>
-<p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-6">flowchart TB
-    subgraph Project 3
-        A[fab:fa-python Python 3.10]
-        A--&gt;B[numpy 1.24.0]
-        A--&gt;C[Django 4.0]
-        A--&gt;D[TensorFlow 2.11]
-    end
-    subgraph Project 2
-        E[fab:fa-python Python 3.8]
-        E--&gt;F[numpy 1.1.0]
-        E--&gt;G[matplotlib 3.1]
-    end
-    subgraph Project 1
-        H[fab:fa-python Python 3.10]
-        H--&gt;I[numpy 1.1.0]
-        H--&gt;J[matplotlib 3.1]
-    end
-    K[fab:fa-python System Python]
-</pre>
-<div id="mermaid-tooltip-6" class="mermaidTooltip">
-
-</div>
-<p></p>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p><br></p>
-<p><code>pip freeze</code></p>
-<pre><code>numpy==1.1.0
-matplotlib&gt;3</code></pre>
-<p><code>requirements.txt</code> <br></p>
-<div class="callout callout-note callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p><strong>Tools</strong>: <a href="https://docs.python.org/3/library/venv.html"><code>venv</code></a> / <a href="https://pipenv.pypa.io/en/latest/"><code>pipenv</code></a> / <a href="https://docs.conda.io/en/latest/"><code>conda</code></a> / <a href="https://python-poetry.org/"><code>poetry</code></a></p>
-</div>
-</div>
-</div>
-</div>
-</section>
+<img data-src="assets/images/githubactions_screenshot.png" class="r-stretch quarto-figure-center"></section>
 <section id="great-resources" class="slide level2">
 <h2>Great resources</h2>
 <p><a href="https://www.britishecologicalsociety.org/wp-content/uploads/2019/06/BES-Guide-Reproducible-Code-2019.pdf"><img data-src="assets/images/bes_reproducible_code.jpg"></a> <a href="https://the-turing-way.netlify.app/"><img data-src="assets/images/turing_way.jpg" style="width:40.0%"></a></p>
