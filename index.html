@@ -761,11 +761,21 @@ gitGraph
 </div>
 </div>
 <p><br></p>
-<div class="fragment">
+</section>
+<section id="demo" class="slide level2">
+<h2>Demo</h2>
+<p><a href="https://onlywei.github.io/explain-git-with-d3" class="uri">https://onlywei.github.io/explain-git-with-d3</a></p>
+<p>or</p>
+<p><a href="https://bit.ly/git-sandbox" class="uri">https://bit.ly/git-sandbox</a></p>
+<p>or</p>
+<div id="qrcode" class="qrcode"></div>
+<script type="text/javascript">
+var qrcode = new QRCode("qrcode", {"width":"350","height":"350","colorLight":"#ffffff","colorDark":"#000000","text":"https://onlywei.github.io/explain-git-with-d3"});
+</script>
+    
 <h3 id="commits-contain-changes">Commits contain <em>changes</em></h3>
 <p>Not actually <em>snapshots</em> of a file.</p>
 <p>But can recreate a state from a sequence of changes.</p>
-</div>
 </section>
 <section id="making-a-commit-fa-solid-code-commit" class="slide level2">
 <h2>Making a commit <i class="fa-solid fa-code-commit" aria-label="code-commit"></i></h2>
@@ -910,18 +920,6 @@ gitGraph
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge experiment</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="demo" class="slide level2">
-<h2>Demo</h2>
-<p><a href="https://onlywei.github.io/explain-git-with-d3" class="uri">https://onlywei.github.io/explain-git-with-d3</a></p>
-<p>or</p>
-<p><a href="https://bit.ly/git-sandbox" class="uri">https://bit.ly/git-sandbox</a></p>
-<p>or</p>
-<div id="qrcode" class="qrcode"></div>
-<script type="text/javascript">
-var qrcode = new QRCode("qrcode", {"width":"350","text":"https://onlywei.github.io/explain-git-with-d3","colorLight":"#ffffff","height":"350","colorDark":"#000000"});
-</script>
-    
 </section>
 <section id="repositories-repos" class="slide level2">
 <h2>Repositories (Repos)</h2>
