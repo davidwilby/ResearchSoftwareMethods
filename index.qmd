@@ -365,6 +365,19 @@ The most important concept in git is the `commit` - the name given to a unit of 
 
 . . .
 
+## Demo
+
+<https://onlywei.github.io/explain-git-with-d3>
+
+or
+
+<https://bit.ly/git-sandbox>
+
+or
+
+
+{{< qrcode https://onlywei.github.io/explain-git-with-d3 width=350 height=350 >}}
+
 ### Commits contain *changes*
 
 Not actually *snapshots* of a file.
@@ -511,21 +524,6 @@ git checkout main
 git merge experiment
 git commit
 ```
-
-
-## Demo
-
-<https://onlywei.github.io/explain-git-with-d3>
-
-or
-
-<https://bit.ly/git-sandbox>
-
-or
-
-
-{{< qrcode https://onlywei.github.io/explain-git-with-d3 width=350 height=350 >}}
-
 
 ## Repositories (Repos)
 
